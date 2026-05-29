@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --foreground: #edf2f4;
+  --red: #d90429;
+  --orange: #ff5400;
+  --carbon: #1a1a1a;
+  --font-inter: Montserrat, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-syncopate: Syncopate, Montserrat, "Arial Black", var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(217, 4, 41, 0.12), transparent 34rem),
+    radial-gradient(circle at 85% 15%, rgba(255, 84, 0, 0.08), transparent 30rem),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, sans-serif;
+}
+
+::selection {
+  background: rgba(217, 4, 41, 0.82);
+  color: white;
+}
+
+.font-display {
+  font-family: var(--font-syncopate), var(--font-inter), sans-serif;
+}
+
+.carbon {
+  background-color: #0d0d0d;
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.025) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.025) 75%);
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  background-size: 16px 16px;
+}
+
+.section-pad {
+  padding: clamp(5rem, 8vw, 9rem) 0;
+}
+
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.telemetry-grid {
+  background-image:
+    linear-gradient(rgba(237, 242, 244, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(237, 242, 244, 0.055) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 78%, transparent);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
