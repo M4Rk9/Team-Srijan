@@ -39,7 +39,7 @@ const navItems = [
   ["Story", "#story"],
   ["Garage", "#garage"],
   ["Team", "#team"],
-  ["Sponsors", "#sponsorship"],
+  ["Sponsors", "/sponsors"],
   ["Achievements", "#achievements"],
   ["Gallery", "#gallery"],
   ["Contact", "#contact"]
@@ -53,124 +53,133 @@ const cars = [
     name: "TSI-07",
     year: "2007",
     image: "/images/TSI-07.png",
-    chassis: "First-generation Formula Student frame",
-    powertrain: "Combustion prototype platform",
-    aerodynamics: "Foundational bodywork package",
-    suspension: "Independent race suspension",
-    electronics: "Baseline vehicle wiring",
-    weight: "Legacy development platform"
+    chassis: "Tubular Space Frame\n1020 CDS Steel",
+    powertrain: "600cc Engine\nMaruti 800 Transmission",
+    aerodynamics: "Glass Reinforced Fibre (GRP) Bodywork",
+    vehicleDynamics: "Double Wishbone Geometry\nDirect Actuated Dampers\nWelded Steel Uprights\n12\" Wheels\nTreaded Tyres",
+    brakes: "Data Unavailable",
+    electronics: "Standard Engine Electronics"
   },
   {
     name: "TSI-11",
     year: "2011",
     image: "/images/TSI-11.png",
-    chassis: "Evolved tubular architecture",
-    powertrain: "Combustion race package",
-    aerodynamics: "Compact bodywork refinement",
-    suspension: "Double wishbone geometry",
-    electronics: "Improved harness reliability",
-    weight: "Weight-reduction development"
+    chassis: "Tubular Space Frame\n4130 Chromoly Steel",
+    powertrain: "Maruti 800cc BS-III\nMPFI\n4-Speed Gearbox",
+    aerodynamics: "CFD Optimized GRP Bodywork",
+    vehicleDynamics: "Double A-Arm Geometry\nPushrod Suspension\nMachined Aluminium Uprights\nVariable Rack & Pinion Steering\n100% Ackermann Geometry\n13\" JK Tyre Slicks",
+    brakes: "Outboard Brakes\nDual Master Cylinder\nAdjustable Brake Bias",
+    electronics: "MPFI Engine Management"
   },
   {
     name: "TSI-12",
     year: "2012",
     image: "/images/TSI-12.png",
-    chassis: "Stiffness-focused frame",
-    powertrain: "Responsive combustion setup",
-    aerodynamics: "Low-drag bodywork",
-    suspension: "Track-focused tuning",
-    electronics: "Competition-ready electricals",
-    weight: "Optimized legacy platform"
+    chassis: "Tubular Space Frame\n1020 CDS Steel",
+    powertrain: "Maruti 800cc BS-III\nMPFI\n4-Speed Gearbox",
+    aerodynamics: "Glass Reinforced Fibre Bodywork",
+    vehicleDynamics: "Double Wishbone Geometry\nPushrod Actuated Dampers\nAluminium Hubs\nAluminium Hats\nAluminium Uprights\nBraid Formrace 13x7 Wheels\nHoosier R25B Slicks",
+    brakes: "Outboard Brakes\nDual Master Cylinder\nPS1 Calipers",
+    electronics: "MPFI Electronic Fuel Injection"
   },
   {
     name: "TSI-13",
     year: "2013",
     image: "/images/TSI-13.png",
-    chassis: "Refined space frame",
-    powertrain: "Improved intake and exhaust",
-    aerodynamics: "Cooling and drag balance",
-    suspension: "Adjustable setup window",
-    electronics: "Robust data channels",
-    weight: "Iterative mass reduction"
+    chassis: "TIG Welded Tubular Space Frame\n1020 CDS Steel",
+    powertrain: "Royal Enfield 500cc EFI\nIntegrated Transmission",
+    aerodynamics: "Glass Reinforced Fibre Bodywork",
+    vehicleDynamics: "Double Wishbone Suspension\nPushrod Actuated 4-Way Adjustable Dampers\nMachined Aluminium Hubs & Uprights\nBraid Formrace 13x7 Wheels\nHoosier R25B Slicks\nRack & Pinion Steering\n2.2:1 Steering Ratio",
+    brakes: "Outboard Brakes\nDual Master Cylinder\nAdjustable Brake Bias\nPSI Calipers",
+    electronics: "Electronic Fuel Injection (EFI)"
   },
   {
     name: "TSI-15",
     year: "2015",
     image: "/images/TSI-15.png",
-    chassis: "Manufacturability-led frame",
-    powertrain: "Race-calibrated combustion",
-    aerodynamics: "Bodywork packaging study",
-    suspension: "Driver confidence geometry",
-    electronics: "Serviceable harness layout",
-    weight: "Legacy race weight target"
+    chassis: "AISI 1018 Space Frame\nFEA Optimized Structure\nMIG Welded Construction",
+    powertrain: "Royal Enfield 500cc\nCustom Intake & Exhaust\nQuaife ATB LSD",
+    aerodynamics: "CFD-Driven Development\nOptimized Airflow Packaging",
+    vehicleDynamics: "Pushrod Double Wishbone\nAnti-Roll Bars\n7075 Aluminium Components",
+    brakes: "Wilwood GP200 Calipers\nDual Tilton Masters\nAdjustable Brake Bias",
+    electronics: "Powertronic RR ECU\nArduino DAQ\nCustom Telemetry System"
   },
   {
     name: "TSI-16",
     year: "2016",
     image: "/images/TSI-16.png",
-    chassis: "High-reliability frame",
-    powertrain: "Torque delivery refinement",
-    aerodynamics: "Cooling-optimized package",
-    suspension: "Mechanical grip development",
-    electronics: "Sensor expansion phase",
-    weight: "Reduced subsystem mass"
+    chassis: "AISI-1018 Tubular Space Frame\n35 kg Frame Weight\n1940 Nm/deg Torsional Stiffness\nFoS 3.5",
+    powertrain: "Royal Enfield 500cc EFI\n27.2 BHP\n44 Nm Torque\nHelmholtz Intake\nCustom Exhaust",
+    aerodynamics: "ANSYS Flow Optimized Intake",
+    vehicleDynamics: "Double Wishbone Suspension\nPushrod Rear\nPullrod Front\nAdjustable Geometry\nKeizer 10\" Wheels\nHoosier Slicks & Wet Tyres\nQuaife LSD\nHollow Driveshafts\nFinal Drive Ratio 2.55",
+    brakes: "Wilwood GP200 Calipers\nTilton Dual Master Cylinder\n65:35 Brake Bias",
+    electronics: "RaceDynamics ECU\nArduino DAQ\nDriver Analytics\nMulti-Sensor Logging"
   },
   {
     name: "TSI-17",
     year: "2017",
     image: "/images/TSI-17.png",
-    chassis: "Performance-focused tubular frame",
-    powertrain: "Improved drivetrain response",
-    aerodynamics: "Initial aero performance studies",
-    suspension: "Kinematic redesign",
-    electronics: "Data-backed validation",
-    weight: "Competitive combustion target"
+    chassis: "1020 CDS Steel Space Frame\nDetachable Rear Subframe",
+    powertrain: "KTM 390cc\n36 HP @ 8000 RPM\n3D Printed Intake\nCustom Exhaust",
+    aerodynamics: "Carbon Fibre Bodywork\nCarbon Fibre Seats",
+    vehicleDynamics: "Double Wishbone Suspension\nHoosier R25B Slicks\nKeizer 10x7 Wheels\nTTC Tyre Data Optimization\nElectromechanical Gear Shifter\nQuaife LSD",
+    brakes: "Wilwood GP200 Outboard Calipers",
+    electronics: "Race Dynamics ECU\nIn-House DAQ\nGPS Track Mapping\nLaunch Control"
   },
   {
     name: "TSI-18",
     year: "2018",
     image: "/images/TSI-18.png",
-    chassis: "Optimized chromoly frame",
-    powertrain: "Refined intake and exhaust",
-    aerodynamics: "Underbody and bodywork development",
-    suspension: "Adjustable dampers",
-    electronics: "Telemetry-ready harness",
-    weight: "Approx. 218 kg target"
+    chassis: "AISI 1020 CDS Steel Space Frame",
+    powertrain: "KTM 390cc\n42 BHP @ 8000 RPM\n3D Printed Intake\nCustom Exhaust",
+    aerodynamics: "Carbon Fibre Body Panels\nCarbon Fibre Seat",
+    vehicleDynamics: "Double Wishbone Geometry\nKeizer Aluminium Wheels\nHoosier R25B 10\" Slicks\nPneumatic Gear Shifter\nDREXLER LSD",
+    brakes: "Honda Aviator Disc Brakes\nWilwood GP200 Calipers\nCustom Pedals",
+    electronics: "PE3 ECU\nAiM EVO4 DAQ\nLaunch Control"
   },
   {
     name: "TSI-19",
     year: "2019",
     image: "/images/TSI-19.png",
-    chassis: "Tubular space frame",
-    powertrain: "Single-cylinder IC platform",
-    aerodynamics: "Baseline aero package",
-    suspension: "Double wishbone",
-    electronics: "Custom data acquisition",
-    weight: "Approx. 230 kg"
+    chassis: "AISI 1020 CDS Steel Space Frame",
+    powertrain: "KTM 390cc\n42 BHP @ 8000 RPM\n3D Printed Intake\nCustom Exhaust",
+    aerodynamics: "Carbon Fibre Bodywork\nCarbon Fibre Seat",
+    vehicleDynamics: "Double Wishbone Geometry\nKeizer Aluminium Wheels\nHoosier R25B 10\" Slicks\nPneumatic Gear Shifter\nDREXLER LSD",
+    brakes: "Honda Aviator Disc Brakes\nWilwood GP200 Calipers\nCustom Pedals",
+    electronics: "PE3 ECU\nAiM EVO4 DAQ\nLaunch Control\nDriver Analytics"
   },
   {
     name: "TSE-22",
     year: "2022",
     image: "/images/TSE-22.png",
-    chassis: "Electric-platform architecture",
-    powertrain: "Electric vehicle development package",
-    aerodynamics: "Packaging-led aero concept",
-    suspension: "Kinematic redesign",
-    electronics: "High-voltage systems and data acquisition",
-    weight: "Electric prototype target"
+    chassis: "AISI 4130 Steel Space Frame\nAl 7075-T6 Rear Bulkhead\nErgonomic Driver Seat",
+    powertrain: "Saietta 119R PMDC Motor\nKelly Controller\nChain Drive\nDrexler LSD\nIntegrated Outboard Hubs",
+    aerodynamics: "CFRP Bodywork\nSide Pods\nUndertray\nWings",
+    vehicleDynamics: "Double Wishbone Geometry\nOhlins TTX25 Dampers\nFront & Rear Anti-Roll Bars\nAl 7075-T6 Machined Components",
+    brakes: "Wilwood GP200 Calipers\nAP Racing Master Cylinder\nFloating Rotors",
+    electronics: "Custom PCBs\nPE3 Data Logging\nOrion BMS 2\nForced Air Cooled Accumulator"
   },
   {
     name: "TSI-25",
     year: "2025",
     image: "/images/TSI-25.png",
-    chassis: "Next-generation lightweight platform",
-    powertrain: "Efficiency-focused combustion package",
-    aerodynamics: "Full aero development target",
-    suspension: "Track-tuned compliance",
-    electronics: "Live telemetry architecture",
-    weight: "Aggressive lightweight target"
+    chassis: "AISI 4130 Space Frame\nAl 7075-T6 Rear Bulkhead",
+    powertrain: "Honda CBR250R Engine\n3D Printed Intake\nCustom Exhaust",
+    aerodynamics: "GFRP Bodywork\nGFRP Seat",
+    vehicleDynamics: "Double Wishbone Geometry\nOhlins TTX25 Dampers\nAl 7075-T6 Machined Parts\nMechanical Gear Shifter\nDrexler LSD",
+    brakes: "Custom Rotors\nAP Racing Master Cylinder",
+    electronics: "Powertronic V4 ECU"
   }
 ];
+
+const technicalSheetFields = [
+  ["chassis", "CHASSIS"],
+  ["powertrain", "POWERTRAIN"],
+  ["aerodynamics", "AERODYNAMICS"],
+  ["vehicleDynamics", "VEHICLE DYNAMICS"],
+  ["brakes", "BRAKES"],
+  ["electronics", "ELECTRONICS"]
+] as const;
 
 const subsystems = [
   ["Faculty Advisors", "Strategic mentorship, compliance, review gates", ShieldCheck],
@@ -192,13 +201,6 @@ const members = [
   ["Brianson John Lakra", "Powertrain Lead", "Drivetrain Systems"],
   ["Gaurav Sharma", "Chassis Lead", "Chemical Engineering"],
   ["Shaswat Pankaj", "Team Manager", "Chassis & Ergonomics"]
-];
-
-const tiers = [
-  ["Title Partner", "Flagship identity across car livery, team apparel, media campaigns, paddock presence, and launch assets."],
-  ["Platinum", "Premium logo placement, event visibility, technical collaboration access, and recruitment touchpoints."],
-  ["Gold", "Strong brand exposure across vehicle panels, digital channels, campus events, and competition reports."],
-  ["Silver", "Focused support tier for suppliers, tooling partners, local businesses, and engineering patrons."]
 ];
 
 const achievements = [
@@ -244,6 +246,14 @@ const contactLinks = [
   [Linkedin, "LinkedIn", "Team Srijan", "https://www.linkedin.com/company/teamsrijan"],
   [Youtube, "YouTube", "@TEAMSRIJAN", "https://www.youtube.com/@TEAMSRIJAN"],
   [Facebook, "Facebook", "TeamSrijan", "https://www.facebook.com/TeamSrijan/"]
+] as const;
+
+const competitionLinks = [
+  ["Supra SAE", "https://www.suprasaeindia.org/"],
+  ["Formula Bharat", "https://formulabharat.com/"],
+  ["Formula Student UK", "https://www.imeche.org/events/formula-student"],
+  ["Formula Student Italy", "https://www.formula-ata.it/formula-sae-italy/"],
+  ["Formula Student Germany", "https://www.formulastudent.de/teams/fse/details/tid/1132/"]
 ] as const;
 
 function Reveal({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -304,7 +314,7 @@ function Nav() {
             <Image src={teamLogo} alt="Team Srijan logo" width={60} height={60} className="h-14 w-14 object-contain" />
           </span>
           <span>
-            <span className="block font-display text-sm font-bold tracking-[0.28em]">TEAM SRIJAN</span>
+            <span className="block text-sm font-bold tracking-[0.28em]">TEAM SRIJAN</span>
             <span className="block text-[10px] uppercase tracking-[0.26em] text-white/50">FORMULA STUDENT</span>
           </span>
         </Link>
@@ -323,7 +333,7 @@ function Nav() {
             <span className="text-[10px] font-bold uppercase leading-4 tracking-[0.2em] text-white/52">BIT<br />Mesra</span>
           </span>
           <Button asChild size="sm">
-            <Link href="#sponsorship">Sponsor Us</Link>
+            <Link href="/sponsors">Sponsor Us</Link>
           </Button>
         </div>
         <button
@@ -363,11 +373,11 @@ function Hero() {
       <div className="telemetry-grid absolute inset-0 opacity-60" />
       <motion.div
         aria-hidden
-        className="absolute right-[7vw] top-32 hidden w-72 rounded-[8px] border border-[#ff5400]/30 bg-black/20 p-4 text-xs text-white/60 backdrop-blur md:block"
+        className="font-telemetry absolute right-[7vw] top-32 hidden w-72 rounded-[8px] border border-[#ff5400]/30 bg-black/20 p-4 text-xs text-white/60 backdrop-blur md:block"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="mb-3 flex items-center justify-between font-display text-[10px] tracking-[0.22em] text-[#ff5400]">
+        <div className="mb-3 flex items-center justify-between text-[10px] tracking-[0.22em] text-[#ff5400]">
           <span>LIVE TELEMETRY</span>
           <Gauge size={16} />
         </div>
@@ -382,7 +392,7 @@ function Hero() {
       </motion.div>
       <div className="container relative z-10 flex min-h-screen items-center pt-24">
         <div className="max-w-4xl">
-          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-5 text-xs font-bold uppercase tracking-[0.36em] text-[#ff5400]">
+          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="font-telemetry mb-5 text-xs font-bold uppercase tracking-[0.36em] text-[#ff5400]">
             Formula Student Team of BIT Mesra
           </motion.p>
           <motion.h1
@@ -398,7 +408,7 @@ function Hero() {
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85, delay: 0.34 }} className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <Link href="#sponsorship">Sponsor Us <ArrowRight size={18} /></Link>
+              <Link href="/sponsors">Sponsor Us <ArrowRight size={18} /></Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link href="#garage">Explore Our Cars</Link>
@@ -419,7 +429,7 @@ function Hero() {
 function SectionTitle({ eyebrow, title, copy }: { eyebrow: string; title: string; copy?: string }) {
   return (
     <Reveal className="mb-12 max-w-3xl">
-      <p className="mb-3 text-xs font-bold uppercase tracking-[0.32em] text-[#ff5400]">{eyebrow}</p>
+      <p className="font-telemetry mb-3 text-xs font-bold uppercase tracking-[0.32em] text-[#ff5400]">{eyebrow}</p>
       <h2 className="font-display text-[clamp(2rem,4.8vw,4.7rem)] font-bold leading-none">{title}</h2>
       {copy && <p className="mt-5 text-base leading-8 text-white/62 md:text-lg">{copy}</p>}
     </Reveal>
@@ -461,15 +471,15 @@ function Story() {
                 </span>
                 <span>
                   <span className="block text-[10px] font-bold uppercase tracking-[0.22em] text-[#ff5400]">Institution</span>
-                  <span className="block font-display text-sm font-bold">BIT Mesra</span>
+                  <span className="block text-sm font-bold">BIT Mesra</span>
                 </span>
               </div>
               <div className="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-3 md:grid-cols-4">
                 {[
                   [2007, "Founded", ""],
-                  [17, "Years", "+"],
+                  [19, "Years", "+"],
                   [40, "Members", "+"],
-                  [4, "Competition formats", "+"]
+                  [5, "Competition Formats", "+"]
                 ].map(([value, label, suffix]) => (
                   <div key={label} className="border border-white/10 bg-black/55 p-3 backdrop-blur">
                     <p className="font-display text-2xl font-bold"><Counter value={Number(value)} suffix={String(suffix)} /></p>
@@ -522,12 +532,12 @@ function Garage() {
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.05),rgba(0,0,0,0.82))]" />
                   <div className="absolute bottom-5 left-5 right-5 flex flex-col justify-between gap-4 md:flex-row md:items-end">
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#ff5400]">Team Srijan Garage</p>
+                    <p className="font-telemetry text-xs font-bold uppercase tracking-[0.28em] text-[#ff5400]">Team Srijan Garage</p>
                       <p className="mt-2 font-display text-4xl font-bold">{selected.name}</p>
                     </div>
                     <div className="grid grid-cols-3 gap-2 text-center">
                       {["CAD", "FAB", "RACE"].map((label) => (
-                        <span key={label} className="rounded-[6px] border border-white/15 bg-white/10 px-3 py-2 text-[10px] font-bold tracking-[0.2em] text-white/70 backdrop-blur">{label}</span>
+                        <span key={label} className="font-telemetry rounded-[6px] border border-white/15 bg-white/10 px-3 py-2 text-[10px] font-bold tracking-[0.2em] text-white/70 backdrop-blur">{label}</span>
                       ))}
                     </div>
                   </div>
@@ -540,21 +550,21 @@ function Garage() {
               <CardContent className="p-7">
                 <div className="mb-6 flex items-center justify-between">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.28em] text-[#ff5400]">Technical sheet</p>
+                    <p className="font-telemetry text-xs uppercase tracking-[0.28em] text-[#ff5400]">Technical sheet</p>
                     <h3 className="mt-2 font-display text-3xl font-bold">{selected.name}</h3>
                   </div>
                   <Gauge className="text-[#d90429]" size={34} />
                 </div>
                 <div className="grid gap-3">
-                  {Object.entries(selected)
-                    .filter(([key]) => !["name", "year", "image"].includes(key))
-                    .map(([key, value]) => (
-                      <details key={key} className="group rounded-[6px] border border-white/10 bg-black/24 p-4 open:border-[#d90429]/50">
+                  {technicalSheetFields
+                    .map(([key, label]) => [label, selected[key]] as const)
+                    .map(([label, value]) => (
+                      <details key={label} className="group rounded-[6px] border border-white/10 bg-black/24 p-4 open:border-[#d90429]/50">
                         <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-bold uppercase tracking-[0.16em]">
-                          {key}
+                          {label}
                           <ChevronDown className="transition group-open:rotate-180" size={16} />
                         </summary>
-                        <p className="mt-3 text-sm leading-7 text-white/62">{value}</p>
+                        <p className="mt-3 whitespace-pre-line text-sm leading-7 text-white/62">{value}</p>
                       </details>
                     ))}
                 </div>
@@ -641,35 +651,6 @@ function Sponsorship() {
             </div>
           ))}
         </div>
-        <div className="grid gap-5 lg:grid-cols-4">
-          {tiers.map(([title, copy], index) => (
-            <Reveal key={title} delay={index * 0.07}>
-              <Card className={cn("h-full overflow-hidden transition hover:-translate-y-1", index === 0 && "border-[#d90429]/55 bg-[#d90429]/12")}>
-                <CardContent className="p-6">
-                  <p className="mb-5 text-xs uppercase tracking-[0.26em] text-[#ff5400]">Tier {index + 1}</p>
-                  <h3 className="font-display text-2xl font-bold">{title}</h3>
-                  <p className="mt-4 min-h-28 text-sm leading-7 text-white/62">{copy}</p>
-                  <div className="my-6 grid h-24 place-items-center rounded-[6px] border border-dashed border-white/20 bg-black/24 p-4">
-                    <div className="flex items-center gap-3 opacity-70">
-                      <span className="grid size-12 place-items-center overflow-hidden rounded-[6px] bg-white">
-                        <Image src={teamLogo} alt="Team Srijan sponsor placement preview" width={42} height={42} className="h-10 w-10 object-contain" />
-                      </span>
-                      <span className="text-xs uppercase tracking-[0.2em] text-white/42">Partner Logo Placement</span>
-                    </div>
-                  </div>
-                  <ul className="mb-6 grid gap-2 text-sm text-white/62">
-                    <li>Priority social visibility</li>
-                    <li>Competition report inclusion</li>
-                    <li>Campus and launch access</li>
-                  </ul>
-                  <Button asChild variant={index === 0 ? "default" : "outline"} className="w-full">
-                    <Link href="#contact">Discuss Partnership</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            </Reveal>
-          ))}
-        </div>
         <Reveal className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button asChild size="lg">
             <Link href="/Team-Srijan-Sponsorship-Brochure.pdf"><Download size={18} /> Download Brochure</Link>
@@ -713,7 +694,7 @@ function Achievements() {
                 <span className="absolute -left-[31px] top-5 size-3 rounded-full bg-[#ff5400] shadow-[0_0_24px_rgba(255,84,0,0.8)]" />
                 <Card>
                   <CardContent>
-                    <p className="text-xs uppercase tracking-[0.24em] text-[#ff5400]">Formula Student</p>
+                    <p className="font-telemetry text-xs uppercase tracking-[0.24em] text-[#ff5400]">Formula Student</p>
                     <h3 className="mt-2 font-display text-2xl font-bold">{event}</h3>
                     <p className="mt-3 text-sm leading-7 text-white/62">{copy}</p>
                   </CardContent>
@@ -775,16 +756,31 @@ function Contact() {
           <Reveal>
             <Card>
               <CardContent className="p-6 md:p-8">
-                <form className="grid gap-4" aria-label="Contact inquiry form">
-                  {["Name", "Email", "Organization"].map((label) => (
-                    <label key={label} className="grid gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/58">
-                      {label}
-                      <input required={label !== "Organization"} type={label === "Email" ? "email" : "text"} className="h-12 rounded-[6px] border border-white/10 bg-black/35 px-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
-                    </label>
-                  ))}
+                <form
+                  className="grid gap-4"
+                  aria-label="Contact inquiry form"
+                  action="https://formsubmit.co/teamsrijan2007@gmail.com"
+                  method="POST"
+                >
+                  <input type="hidden" name="_subject" value="New inquiry from Team Srijan website" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_next" value="http://localhost:3000/thank-you" />
+                  <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/58">
+                    Name
+                    <input name="name" required type="text" className="h-12 rounded-[6px] border border-white/10 bg-black/35 px-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
+                  </label>
+                  <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/58">
+                    Email
+                    <input name="email" required type="email" className="h-12 rounded-[6px] border border-white/10 bg-black/35 px-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
+                  </label>
+                  <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/58">
+                    Organization
+                    <input name="organization" type="text" className="h-12 rounded-[6px] border border-white/10 bg-black/35 px-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
+                  </label>
                   <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/58">
                     Message
-                    <textarea required rows={6} className="resize-none rounded-[6px] border border-white/10 bg-black/35 p-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
+                    <textarea name="message" required rows={6} className="resize-none rounded-[6px] border border-white/10 bg-black/35 p-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
                   </label>
                   <Button type="submit" size="lg">Send Inquiry <ArrowRight size={18} /></Button>
                 </form>
@@ -849,10 +845,19 @@ function Footer() {
             </div>
           </div>
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-white/45">Sponsor strip</p>
-            <div className="grid grid-cols-3 gap-2">
-              {["Title", "Platinum", "Gold"].map((label) => (
-                <span key={label} className="grid h-12 place-items-center rounded-[6px] border border-white/10 bg-white/[0.04] text-[10px] uppercase tracking-[0.18em] text-white/38">{label}</span>
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-white/45">Competitions</p>
+            <div className="grid gap-2">
+              {competitionLinks.map(([label, href]) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-11 items-center justify-between rounded-[6px] border border-white/10 bg-white/[0.04] px-4 text-[10px] font-bold uppercase tracking-[0.16em] text-white/50 transition hover:border-[#ff5400]/60 hover:text-white"
+                >
+                  {label}
+                  <ExternalLink size={14} />
+                </Link>
               ))}
             </div>
           </div>
@@ -884,7 +889,7 @@ function LoadingIntro() {
         <motion.div className="mx-auto mb-5 h-1 w-64 overflow-hidden rounded-full bg-white/10">
           <motion.span className="block h-full bg-[#d90429]" initial={{ x: "-100%" }} animate={{ x: "100%" }} transition={{ duration: 0.9, ease: "easeInOut" }} />
         </motion.div>
-        <p className="font-display text-sm font-bold tracking-[0.32em]">INITIALIZING RACE SYSTEMS</p>
+        <p className="font-telemetry text-sm font-bold tracking-[0.32em]">INITIALIZING RACE SYSTEMS</p>
       </div>
     </motion.div>
   );
