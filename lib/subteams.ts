@@ -46,7 +46,7 @@ export const subteams: Subteam[] = [
     title: "Chassis",
     summary: "Space frame design, ergonomics, structural validation, fabrication planning, and packaging.",
     members: [
-      { name: "Shaswat Pankaj", batch: "K23", responsibility: "Chassis Lead", department: "Mechanical Engineer" },
+      { name: "Shashwat Pankaj", batch: "K23", responsibility: "Chassis Lead", department: "Mechanical Engineer" },
       {
         name: "Gaurav Sharma",
         batch: "K24",
@@ -55,7 +55,7 @@ export const subteams: Subteam[] = [
         linkedin: "https://www.linkedin.com/in/gauravsharma2837"
       },
       { name: "Shrivatsa Raj Gahoi", batch: "K24", responsibility: "Chassis Member", department: "Mechanical Engineer" },
-      { name: "Natisha Anand", batch: "K24", responsibility: "Chassis Member", department: "Production & Industrial Engineer" }
+      { name: "Natisha Anand", batch: "K24", responsibility: "Chassis Member", department: "Mechanical Engineer" }
     ]
   },
   {
@@ -72,9 +72,10 @@ export const subteams: Subteam[] = [
     summary: "Engine systems, intake, exhaust, drivetrain, calibration, cooling, and transmission.",
     members: [
       { name: "Arnav Sarna", batch: "K23", responsibility: "Powertrain Lead", department: "Mechanical Engineer" },
+      { name: "Pranshu", batch: "K23", responsibility: "Team Captain", department: "Mechanical Engineer" },
       { name: "Brianson John Lakra", batch: "K24", responsibility: "Powertrain Member", department: "Mechanical Engineer" },
       { name: "Aryan Kumar", batch: "K24", responsibility: "Powertrain Member", department: "Mechanical Engineer" },
-      { name: "Ankit Kumar", batch: "K24", responsibility: "Powertrain Member", department: "Mechanical Engineer" }
+      { name: "Ankit Kumar", batch: "K24", responsibility: "Powertrain Member", department: "Production & Industrial Engineer" }
     ]
   },
   {
@@ -82,9 +83,10 @@ export const subteams: Subteam[] = [
     title: "Vehicle Dynamics",
     summary: "Suspension, steering, tyres, kinematics, compliance, lap-time behavior, and setup.",
     members: [
-      { name: "Ayush Kumar Keshri", batch: "K23", responsibility: "Vehicle Dynamics Lead", department: "Mechanical Engineer" },
+      { name: "Ayush Kumar Keshri", batch: "K23", responsibility: "President", department: "Mechanical Engineer" },
+      { name: "Souvik Sen", batch: "K23", responsibility: "Vehicle Dynamics Lead", department: "Production & Industrial Engineer" },
       {
-        name: "Aadarsh Kumar",
+        name: "Adarsh Kumar",
         batch: "K24",
         responsibility: "Vehicle Dynamics Member",
         department: "Mechanical Engineer",
