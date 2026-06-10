@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { FormEvent } from "react";
 import { useEffect, useMemo, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
@@ -33,16 +34,17 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { subteams } from "@/lib/subteams";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  ["Story", "#story"],
-  ["Garage", "#garage"],
-  ["Team", "#team"],
-  ["Sponsors", "/sponsors"],
-  ["Achievements", "#achievements"],
-  ["Gallery", "#gallery"],
-  ["Contact", "#contact"]
+  { label: "Story", href: "#story", external: false },
+  { label: "Garage", href: "#garage", external: false },
+  { label: "Team", href: "/team", external: true },
+  { label: "Sponsors", href: "/sponsors", external: false },
+  { label: "Achievements", href: "#achievements", external: false },
+  { label: "Gallery", href: "#gallery", external: false },
+  { label: "Contact", href: "#contact", external: false }
 ] as const;
 
 const teamLogo = "/images/team-srijan-logo.png";
@@ -181,27 +183,15 @@ const technicalSheetFields = [
   ["electronics", "ELECTRONICS"]
 ] as const;
 
-const subsystems = [
-  ["Faculty Advisors", "Strategic mentorship, compliance, review gates", ShieldCheck],
-  ["Team Captain", "Program ownership, execution cadence, competition readiness", Target],
-  ["Technical Heads", "Architecture decisions, validation plans, subsystem integration", Gauge],
-  ["Aerodynamics", "CFD, wings, diffuser strategy, cooling flow", Sparkles],
-  ["Chassis", "Frame design, stiffness, ergonomics, crash structures", Wrench],
-  ["Powertrain", "Engine systems, drivetrain, intake, exhaust, calibration", Bolt],
-  ["Electronics", "Wiring, ECU, sensors, telemetry, data acquisition", Cpu],
-  ["Vehicle Dynamics", "Suspension, steering, brakes, tires, lap-time behavior", Gauge],
-  ["Manufacturing", "Fabrication, jigs, composites, machining, QA", Wrench],
-  ["Management & Media", "Brand, partnerships, media, sponsor relations", BriefcaseBusiness]
-] as const;
-
-const members = [
-  ["Pranshu", "Team Captain", "Mechanical Engineering"],
-  ["Arnav Sarna", "Technical Head", "Mechanical Engineering"],
-  ["Ayush Kumar Keshri", "President", "Vehicle Dynamics"],
-  ["Brianson John Lakra", "Powertrain Lead", "Drivetrain Systems"],
-  ["Gaurav Sharma", "Chassis Lead", "Chemical Engineering"],
-  ["Shaswat Pankaj", "Team Manager", "Chassis & Ergonomics"]
-];
+const subsystemIcons = {
+  aerodynamics: Sparkles,
+  brakes: Gauge,
+  chassis: Wrench,
+  electrical: Cpu,
+  powertrain: Bolt,
+  "vehicle-dynamics": Gauge,
+  "management-media": BriefcaseBusiness
+} as const;
 
 const achievements = [
   ["2007", "FS UK - 5th in Class II events"],
@@ -319,9 +309,15 @@ function Nav() {
           </span>
         </Link>
         <div className="hidden items-center gap-7 lg:flex">
-          {navItems.map(([label, href]) => (
-            <Link key={href} href={href} className="text-xs font-bold uppercase tracking-[0.18em] text-white/66 transition hover:text-white">
-              {label}
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
+              className="text-xs font-bold uppercase tracking-[0.18em] text-white/66 transition hover:text-white"
+            >
+              {item.label}
             </Link>
           ))}
         </div>
@@ -347,9 +343,16 @@ function Nav() {
       {open && (
         <div className="border-t border-white/10 bg-[#0a0a0a]/95 px-4 py-5 backdrop-blur-xl lg:hidden">
           <div className="grid gap-3">
-            {navItems.map(([label, href]) => (
-              <Link key={href} href={href} onClick={() => setOpen(false)} className="rounded-[6px] px-3 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white/76 hover:bg-white/10">
-                {label}
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                onClick={() => setOpen(false)}
+                className="rounded-[6px] px-3 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white/76 hover:bg-white/10"
+              >
+                {item.label}
               </Link>
             ))}
           </div>
@@ -582,37 +585,41 @@ function Team() {
     <section id="team" className="section-pad carbon">
       <div className="container">
         <SectionTitle eyebrow="Team Structure" title="A race program, organized by subsystem." copy="Team Srijan mirrors professional motorsport workflows: subsystem accountability, design reviews, manufacturing gates, and competition operations." />
+        <Reveal className="mb-8">
+          <Button asChild variant="outline" size="lg">
+            <Link href="/team" target="_blank" rel="noopener noreferrer">
+              View Complete Team <ExternalLink size={18} />
+            </Link>
+          </Button>
+        </Reveal>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {subsystems.map(([title, copy, Icon], index) => (
-            <Reveal key={title} delay={(index % 5) * 0.04}>
-              <Card className="h-full transition hover:-translate-y-1 hover:border-[#ff5400]/50">
-                <CardContent>
+          {subteams.map((subteam, index) => {
+            const Icon = subsystemIcons[subteam.slug as keyof typeof subsystemIcons];
+
+            return (
+              <Reveal key={subteam.slug} delay={(index % 5) * 0.04}>
+                <Card className="group h-full transition hover:-translate-y-1 hover:border-[#ff5400]/50">
+                  <CardContent>
+                  <Link
+                    href={`/team/${subteam.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open ${subteam.title} subteam members in a new tab`}
+                    className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5400]"
+                  >
                   <Icon className="mb-5 text-[#d90429]" />
-                  <h3 className="font-display text-sm font-bold leading-6">{title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-white/58">{copy}</p>
-                </CardContent>
-              </Card>
-            </Reveal>
-          ))}
-        </div>
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {members.map(([name, role, dept], index) => (
-            <Reveal key={name} delay={index * 0.05}>
-              <Card className="overflow-hidden">
-                <div className="h-36 bg-[linear-gradient(135deg,rgba(217,4,41,0.65),rgba(255,84,0,0.22)),url('/images/srijan-hero.png')] bg-cover bg-center" />
-                <CardContent className="flex items-center justify-between">
-                  <div>
-                    <h3 className="font-display text-lg font-bold">{name}</h3>
-                    <p className="mt-1 text-sm text-[#ff5400]">{role}</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.16em] text-white/45">{dept}</p>
-                  </div>
-                  <Link href="https://www.linkedin.com" aria-label={`${name} LinkedIn`} className="grid size-10 place-items-center rounded-[6px] border border-white/10 hover:border-[#d90429]">
-                    <Linkedin size={18} />
+                  <span className="flex items-center justify-between gap-3">
+                    <h3 className="font-display text-sm font-bold leading-6">{subteam.title}</h3>
+                    <ExternalLink className="opacity-0 transition group-hover:opacity-100" size={15} />
+                  </span>
+                  <p className="mt-3 text-sm leading-6 text-white/58">{subteam.summary}</p>
+                  <p className="font-telemetry mt-5 text-[10px] uppercase tracking-[0.2em] text-[#ff5400]">View Members</p>
                   </Link>
                 </CardContent>
               </Card>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -748,6 +755,14 @@ function Gallery() {
 }
 
 function Contact() {
+  function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+    const nextInput = event.currentTarget.elements.namedItem("_next");
+
+    if (nextInput instanceof HTMLInputElement) {
+      nextInput.value = `${window.location.origin}/thank-you`;
+    }
+  }
+
   return (
     <section id="contact" className="section-pad carbon">
       <div className="container">
@@ -761,11 +776,12 @@ function Contact() {
                   aria-label="Contact inquiry form"
                   action="https://formsubmit.co/teamsrijan2007@gmail.com"
                   method="POST"
+                  onSubmit={handleContactSubmit}
                 >
                   <input type="hidden" name="_subject" value="New inquiry from Team Srijan website" />
                   <input type="hidden" name="_template" value="table" />
                   <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_next" value="http://localhost:3000/thank-you" />
+                  <input type="hidden" name="_next" value="/thank-you" />
                   <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/58">
                     Name
                     <input name="name" required type="text" className="h-12 rounded-[6px] border border-white/10 bg-black/35 px-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
@@ -839,8 +855,16 @@ function Footer() {
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-white/45">Quick links</p>
             <div className="grid grid-cols-2 gap-3">
-              {navItems.map(([label, href]) => (
-                <Link key={href} href={href} className="text-sm text-white/62 hover:text-white">{label}</Link>
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  className="text-sm text-white/62 hover:text-white"
+                >
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>
