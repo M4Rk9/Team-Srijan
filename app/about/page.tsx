@@ -56,7 +56,7 @@ export default function AboutPage() {
         <div className="telemetry-grid absolute inset-0 opacity-45" />
         <div className="container relative z-10">
           <p className="font-telemetry text-xs font-bold uppercase tracking-[0.34em] text-[#ff5400]">Established 2007 · BIT Mesra</p>
-          <h1 className="mt-5 max-w-5xl font-display text-[clamp(3.2rem,8vw,8.5rem)] font-bold uppercase leading-[0.88] tracking-[-0.04em]">
+          <h1 className="mt-5 max-w-5xl font-display text-[clamp(2.4rem,5.5vw,5.4rem)] font-bold uppercase leading-[1.02] tracking-[-0.03em]">
             About<br /><span className="text-white/48">Team Srijan</span>
           </h1>
           <p className="mt-7 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
@@ -71,7 +71,7 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <p className="font-telemetry text-xs font-bold uppercase tracking-[0.3em] text-[#ff5400]">Who we are</p>
-              <h2 className="mt-4 font-display text-[clamp(2.4rem,5vw,5.2rem)] font-bold leading-[0.95]">More than a race car.</h2>
+              <h2 className="mt-4 font-display text-[clamp(2rem,4vw,4.1rem)] font-bold leading-[1.04]">More than a race car.</h2>
               <div className="mt-7 space-y-5 text-base leading-8 text-white/66 md:text-lg">
                 <p>
                   Team Srijan is BIT Mesra&apos;s student-run Formula SAE program. Established in 2007, we are one of the institute&apos;s oldest and most established technical clubs.
@@ -114,7 +114,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="max-w-4xl">
             <p className="font-telemetry text-xs font-bold uppercase tracking-[0.3em] text-[#ff5400]">Our history</p>
-            <h2 className="mt-4 font-display text-[clamp(2.5rem,5.5vw,5.8rem)] font-bold leading-[0.92]">A legacy on the global stage.</h2>
+            <h2 className="mt-4 font-display text-[clamp(2rem,4.2vw,4.2rem)] font-bold leading-[1.04]">A legacy on the global stage.</h2>
             <p className="mt-6 max-w-3xl text-base leading-8 text-white/62 md:text-lg">
               Since 2007, Team Srijan has been a proud part of BIT Mesra&apos;s technical and motorsport legacy, combining innovation with engineering excellence across generations.
             </p>
@@ -143,7 +143,7 @@ export default function AboutPage() {
               <div className="lg:sticky lg:top-28">
                 <span className="grid size-14 place-items-center rounded-[8px] bg-[#d90429]/15 text-[#ff5400]"><Trophy size={30} /></span>
                 <p className="font-telemetry mt-6 text-xs font-bold uppercase tracking-[0.3em] text-[#ff5400]">Achievements</p>
-                <h3 className="mt-4 font-display text-[clamp(2.3rem,4vw,4.2rem)] font-bold leading-[0.96]">Milestones earned along the way.</h3>
+                <h3 className="mt-4 font-display text-[clamp(1.8rem,3.2vw,3.3rem)] font-bold leading-[1.06]">Milestones earned along the way.</h3>
                 <p className="mt-5 max-w-xl text-base leading-8 text-white/58">
                   Our history is measured not only by trophies, but by the seasons when a team learned to design better, communicate clearly, and arrive more prepared than before.
                 </p>
@@ -166,7 +166,7 @@ export default function AboutPage() {
           <div className="grid overflow-hidden rounded-[12px] border border-white/10 bg-[#111216] lg:grid-cols-[1fr_0.9fr]">
             <div className="p-7 sm:p-10 lg:p-14">
               <p className="font-telemetry text-xs font-bold uppercase tracking-[0.3em] text-[#ff5400]">The next chapter</p>
-              <h2 className="mt-4 font-display text-[clamp(2.4rem,5vw,5rem)] font-bold leading-[0.94]">Built by students. Carried by generations.</h2>
+              <h2 className="mt-4 font-display text-[clamp(2rem,3.8vw,3.9rem)] font-bold leading-[1.05]">Built by students. Carried by generations.</h2>
               <p className="mt-6 max-w-2xl text-base leading-8 text-white/62">
                 Our legacy is not stored in trophies alone. It lives in every drawing reviewed, tube welded, lap tested, sponsor earned, and lesson passed from one batch to the next.
               </p>

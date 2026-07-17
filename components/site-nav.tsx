@@ -39,9 +39,7 @@ export function SiteNav() {
         <div className="flex items-center gap-3 sm:gap-5">
           <Link
             href="/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open Team Srijan home in a new tab"
+            aria-label="Team Srijan home"
             className="flex items-center gap-3"
           >
             <Image
@@ -83,8 +81,6 @@ export function SiteNav() {
             <Link
               key={item.label}
               href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
               className="font-telemetry group relative py-3 text-[10px] font-bold uppercase tracking-[0.08em] text-white/78 transition hover:text-white"
             >
               {item.label}
@@ -111,8 +107,6 @@ export function SiteNav() {
               <Link
                 key={item.label}
                 href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="font-telemetry border-b border-white/8 px-2 py-3 text-xs font-bold uppercase tracking-[0.1em] text-white/76 transition last:border-0 hover:text-[#ff5400]"
               >

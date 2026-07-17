@@ -38,7 +38,7 @@ export function ContactPageContent() {
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         <div className="text-center">
           <p className="font-telemetry text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff5400]">Contact</p>
-          <h1 className="mt-3 font-display text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-none text-[#73a7ff]">Connect with Us</h1>
+          <h1 className="mt-3 font-display text-[clamp(2rem,4.4vw,4rem)] font-semibold leading-[1.05] text-[#73a7ff]">Connect with Us</h1>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/62 sm:text-base">
             Have questions about our team, sponsorship opportunities, recruitment, or collaboration? We would love to hear from you.
           </p>
@@ -88,7 +88,7 @@ export function ContactPageContent() {
           </div>
 
           <div>
-            <h2 className="font-display text-[clamp(2rem,4vw,3.4rem)] font-semibold leading-none">Contact Information</h2>
+            <h2 className="font-display text-[clamp(1.7rem,3vw,2.8rem)] font-semibold leading-[1.05]">Contact Information</h2>
             <div className="mt-6 grid gap-3">
               <ContactCard icon={Mail} title="Email" copy="teamsrijan@bitmesra.ac.in" href="mailto:teamsrijan@bitmesra.ac.in" />
               <ContactCard icon={Phone} title="Phone" copy="+91 89308 47425" href="tel:+918930847425" />

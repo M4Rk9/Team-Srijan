@@ -143,7 +143,7 @@ export function TeamPageClient() {
             <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="font-telemetry mb-5 text-xs font-bold uppercase tracking-[0.38em] text-[#ff5400]">
               Coordinates 23.412 N / 85.440 E
             </motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85, delay: 0.1 }} className="font-display text-[clamp(3rem,7vw,7.2rem)] font-bold uppercase leading-[0.9] tracking-[0.02em]">
+            <motion.h1 initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85, delay: 0.1 }} className="font-display text-[clamp(2.3rem,5.2vw,5.2rem)] font-bold uppercase leading-[1.03] tracking-[0.01em]">
               The People Behind The Machine
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85, delay: 0.22 }} className="mt-7 max-w-2xl text-base leading-8 text-white/72 md:text-lg">
@@ -179,7 +179,7 @@ export function TeamPageClient() {
           <Reveal>
             <div className="mb-10 max-w-3xl">
               <p className="font-telemetry mb-3 text-xs font-bold uppercase tracking-[0.32em] text-[#ff5400]">Team Structure</p>
-              <h2 className="font-display text-[clamp(2rem,4.8vw,4.7rem)] font-bold leading-none">Subsystems operating like a race program.</h2>
+              <h2 className="font-display text-[clamp(1.75rem,3.4vw,3.4rem)] font-bold leading-[1.08]">Subsystems operating like a race program.</h2>
             </div>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -209,7 +209,7 @@ export function TeamPageClient() {
           <Reveal>
             <div className="mb-10 max-w-3xl">
               <p className="font-telemetry mb-3 text-xs font-bold uppercase tracking-[0.32em] text-[#ff5400]">Team Gallery</p>
-              <h2 className="font-display text-[clamp(2rem,4.8vw,4.7rem)] font-bold leading-none">From reviews to race day pressure.</h2>
+              <h2 className="font-display text-[clamp(1.75rem,3.4vw,3.4rem)] font-bold leading-[1.08]">From reviews to race day pressure.</h2>
             </div>
           </Reveal>
           <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -234,7 +234,7 @@ export function TeamPageClient() {
           <Reveal>
             <div className="mb-12 max-w-3xl">
               <p className="font-telemetry mb-3 text-xs font-bold uppercase tracking-[0.32em] text-[#ff5400]">Culture</p>
-              <h2 className="font-display text-[clamp(2.2rem,5vw,5rem)] font-bold leading-none">More Than A Racing Team</h2>
+              <h2 className="font-display text-[clamp(1.9rem,3.8vw,3.8rem)] font-bold leading-[1.06]">More Than A Racing Team</h2>
             </div>
           </Reveal>
           <div className="grid gap-10">

@@ -22,7 +22,7 @@ export default function ThankYouPage() {
           </div>
           <CheckCircle2 className="mx-auto mb-6 text-[#ff5400]" size={54} />
           <p className="font-telemetry mb-4 text-xs font-bold uppercase tracking-[0.34em] text-[#ff5400]">Inquiry Submitted</p>
-          <h1 className="font-display text-[clamp(2rem,5vw,4.8rem)] font-bold leading-none">
+          <h1 className="font-display text-[clamp(1.8rem,3.8vw,3.8rem)] font-bold leading-[1.05]">
             Thank you for submitting the form.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">
