@@ -53,7 +53,7 @@ export function SiteNav() {
               priority
             />
             <span className="hidden sm:block">
-              <span className="block text-sm font-bold tracking-[0.24em]">TEAM SRIJAN</span>
+              <span className="block font-display text-sm tracking-[0.18em]">TEAM SRIJAN</span>
               <span className="block text-[9px] uppercase tracking-[0.24em] text-white/50">Formula Student</span>
             </span>
           </Link>
@@ -85,7 +85,7 @@ export function SiteNav() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative py-3 text-xs font-extrabold uppercase tracking-[0.12em] text-white/78 transition hover:text-white"
+              className="font-telemetry group relative py-3 text-[10px] font-bold uppercase tracking-[0.08em] text-white/78 transition hover:text-white"
             >
               {item.label}
               <span className="absolute inset-x-0 bottom-1 h-px origin-left scale-x-0 bg-[#ff5400] transition-transform duration-300 group-hover:scale-x-100" />
@@ -114,7 +114,7 @@ export function SiteNav() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="border-b border-white/8 px-2 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white/76 transition last:border-0 hover:text-[#ff5400]"
+                className="font-telemetry border-b border-white/8 px-2 py-3 text-xs font-bold uppercase tracking-[0.1em] text-white/76 transition last:border-0 hover:text-[#ff5400]"
               >
                 {item.label}
               </Link>
