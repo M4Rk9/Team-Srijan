@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@fontsource/michroma": "^5.2.8",
-    "@fontsource/russo-one": "^5.2.7",
     "@fontsource/titillium-web": "^5.2.8",
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",

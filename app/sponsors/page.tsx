@@ -105,18 +105,6 @@ export default function SponsorsPage() {
                 Team Srijan is backed by organizations that believe in student engineering, manufacturing discipline,
                 simulation-led development, and the future of Indian Formula Student motorsport.
             </p>
-            <div className="mt-8 grid gap-3 border-y border-white/10 py-6 sm:grid-cols-3">
-              {[
-                ["1", "Platinum Partner"],
-                ["3", "Gold Partners"],
-                ["3", "Silver Partners"]
-              ].map(([value, label]) => (
-                <div key={label} className="rounded-[8px] border border-white/10 bg-black p-5">
-                  <p className="font-display text-4xl font-bold">{value}</p>
-                  <p className="font-telemetry mt-2 text-xs uppercase tracking-[0.22em] text-white/45">{label}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div className="grid gap-16">

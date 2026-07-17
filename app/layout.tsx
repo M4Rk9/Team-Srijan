@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "@fontsource/michroma/400.css";
-import "@fontsource/russo-one/400.css";
 import "@fontsource/titillium-web/400.css";
 import "@fontsource/titillium-web/600.css";
 import "@fontsource/titillium-web/700.css";
