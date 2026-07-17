@@ -24,6 +24,20 @@ const timeline = [
   { year: "Today", title: "The legacy continues", copy: "Every new generation inherits two decades of learning and pushes the car forward through simulation, manufacturing, testing, and competition." }
 ] as const;
 
+const achievements = [
+  ["2007", "Formula Student UK · 5th in Class II events"],
+  ["2011", "SUPRA SAE · Team Srijan was reformed"],
+  ["2012", "SUPRA SAE · Built the second-lightest car"],
+  ["2013", "Formula Student Italy · Second-best Indian team in the Engineering Design Event"],
+  ["2015", "Formula Design Challenge · Seventh overall"],
+  ["2016", "Formula Student India · Only Royal Enfield-powered car to clear technical inspection"],
+  ["2017", "Formula Bharat · Sixth in static events and twelfth overall"],
+  ["2018", "Formula Bharat · First in Business Plan, sixth in Design, and eleventh overall"],
+  ["2019", "Formula Bharat · Eighth in Business Plan and sixteenth overall"],
+  ["2022", "Formula Green · First in Cost Presentation and second overall"],
+  ["2024", "PIEV · Second in FMEA and seventh overall"]
+] as const;
+
 export default function AboutPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#070707] text-white">
@@ -123,6 +137,27 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
+
+          <div className="mt-20 border-t border-white/10 pt-14">
+            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+              <div className="lg:sticky lg:top-28">
+                <span className="grid size-14 place-items-center rounded-[8px] bg-[#d90429]/15 text-[#ff5400]"><Trophy size={30} /></span>
+                <p className="font-telemetry mt-6 text-xs font-bold uppercase tracking-[0.3em] text-[#ff5400]">Achievements</p>
+                <h3 className="mt-4 font-display text-[clamp(2.3rem,4vw,4.2rem)] font-bold leading-[0.96]">Milestones earned along the way.</h3>
+                <p className="mt-5 max-w-xl text-base leading-8 text-white/58">
+                  Our history is measured not only by trophies, but by the seasons when a team learned to design better, communicate clearly, and arrive more prepared than before.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {achievements.map(([year, achievement]) => (
+                  <article key={`${year}-${achievement}`} className="rounded-[9px] border border-white/10 bg-white/[0.035] p-5 transition hover:border-[#ff5400]/50">
+                    <p className="font-telemetry text-xs font-bold uppercase tracking-[0.22em] text-[#ff5400]">{year}</p>
+                    <p className="mt-3 text-sm leading-7 text-white/68">{achievement}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -139,7 +174,7 @@ export default function AboutPage() {
                 <Link href="/join" className="inline-flex h-13 items-center justify-center gap-2 rounded-[6px] bg-[#d90429] px-6 text-sm font-bold uppercase tracking-[0.14em] transition hover:bg-[#ff173c]">
                   Join the Team <ArrowRight size={18} />
                 </Link>
-                <Link href="/#garage" className="inline-flex h-13 items-center justify-center gap-2 rounded-[6px] border border-white/20 px-6 text-sm font-bold uppercase tracking-[0.14em] transition hover:border-[#ff5400]">
+                <Link href="/cars" className="inline-flex h-13 items-center justify-center gap-2 rounded-[6px] border border-white/20 px-6 text-sm font-bold uppercase tracking-[0.14em] transition hover:border-[#ff5400]">
                   Explore Our Cars
                 </Link>
               </div>
