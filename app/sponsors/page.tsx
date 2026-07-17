@@ -162,7 +162,7 @@ export default function SponsorsPage() {
 
           <div className="mt-10 flex flex-col justify-between gap-4 border-t border-white/10 py-8 text-sm text-white/48 md:flex-row">
             <p>Team Srijan, Formula Student team of BIT Mesra.</p>
-            <Link href="/#contact" className="font-bold uppercase tracking-[0.18em] text-white/70 transition hover:text-white">
+            <Link href="/contact" className="font-bold uppercase tracking-[0.18em] text-white/70 transition hover:text-white">
               Become a sponsor
             </Link>
           </div>
