@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { FormEvent } from "react";
 import { useEffect, useMemo, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
@@ -19,9 +18,6 @@ import {
   Gauge,
   Instagram,
   Linkedin,
-  Mail,
-  MapPin,
-  Menu,
   Play,
   ShieldCheck,
   Sparkles,
@@ -34,18 +30,9 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { navItems, SiteNav } from "@/components/site-nav";
 import { subteams } from "@/lib/subteams";
 import { cn } from "@/lib/utils";
-
-const navItems = [
-  { label: "Story", href: "#story", external: false },
-  { label: "Garage", href: "#garage", external: false },
-  { label: "Team", href: "/team", external: true },
-  { label: "Sponsors", href: "/sponsors", external: false },
-  { label: "Achievements", href: "#achievements", external: false },
-  { label: "Gallery", href: "#gallery", external: false },
-  { label: "Contact", href: "#contact", external: false }
-] as const;
 
 const teamLogo = "/images/team-srijan-logo.png";
 const instituteLogo = "/images/bit-mesra-logo.png";
@@ -229,14 +216,6 @@ const sponsorReasons = [
   ["CSR Impact", "Back hands-on STEM culture and Indian student motorsport growth.", BadgeCheck]
 ] as const;
 
-const contactLinks = [
-  [MapPin, "BIT Mesra", "Birla Institute of Technology, Mesra, Ranchi, Jharkhand, India", "#"],
-  [Mail, "Official Email", "teamsrijan@bitmesra.ac.in", "mailto:teamsrijan@bitmesra.ac.in"],
-  [Instagram, "Instagram", "@team_srijan", "https://www.instagram.com/team_srijan"],
-  [Linkedin, "LinkedIn", "Team Srijan", "https://www.linkedin.com/company/teamsrijan"],
-  [Youtube, "YouTube", "@TEAMSRIJAN", "https://www.youtube.com/@TEAMSRIJAN"],
-  [Facebook, "Facebook", "TeamSrijan", "https://www.facebook.com/TeamSrijan/"]
-] as const;
 
 const competitionLinks = [
   ["Supra SAE", "https://www.suprasaeindia.org/"],
@@ -278,87 +257,6 @@ function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
       {count}
       {suffix}
     </span>
-  );
-}
-
-function Nav() {
-  const [open, setOpen] = useState(false);
-  const [solid, setSolid] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setSolid(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        solid ? "border-b border-white/10 bg-[#0a0a0a]/86 shadow-2xl shadow-black/40 backdrop-blur-xl" : "bg-transparent"
-      )}
-    >
-      <nav className="container flex h-20 items-center justify-between">
-        <Link href="#home" className="flex items-center gap-3" aria-label="Team Srijan home">
-          <span className="relative grid size-16 place-items-center overflow-hidden">
-            <Image src={teamLogo} alt="Team Srijan logo" width={60} height={60} className="h-14 w-14 object-contain" />
-          </span>
-          <span>
-            <span className="block text-sm font-bold tracking-[0.28em]">TEAM SRIJAN</span>
-            <span className="block text-[10px] uppercase tracking-[0.26em] text-white/50">FORMULA STUDENT</span>
-          </span>
-        </Link>
-        <div className="hidden items-center gap-7 lg:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              target={item.external ? "_blank" : undefined}
-              rel={item.external ? "noopener noreferrer" : undefined}
-              className="text-xs font-bold uppercase tracking-[0.18em] text-white/66 transition hover:text-white"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-        <div className="hidden items-center gap-4 lg:flex">
-          <span className="flex items-center gap-2 border-l border-white/10 pl-4">
-            <span className="relative grid size-9 place-items-center overflow-hidden">
-              <Image src={instituteLogo} alt="BIT Mesra logo" width={34} height={34} className="h-8 w-8 object-contain" />
-            </span>
-            <span className="text-[10px] font-bold uppercase leading-4 tracking-[0.2em] text-white/52">BIT<br />Mesra</span>
-          </span>
-          <Button asChild size="sm">
-            <Link href="/sponsors">Sponsor Us</Link>
-          </Button>
-        </div>
-        <button
-          className="grid size-11 place-items-center rounded-[6px] border border-white/15 bg-white/5 lg:hidden"
-          onClick={() => setOpen((value) => !value)}
-          aria-label="Toggle navigation"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </nav>
-      {open && (
-        <div className="border-t border-white/10 bg-[#0a0a0a]/95 px-4 py-5 backdrop-blur-xl lg:hidden">
-          <div className="grid gap-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                target={item.external ? "_blank" : undefined}
-                rel={item.external ? "noopener noreferrer" : undefined}
-                onClick={() => setOpen(false)}
-                className="rounded-[6px] px-3 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white/76 hover:bg-white/10"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
-    </header>
   );
 }
 
@@ -663,7 +561,7 @@ function Sponsorship() {
             <Link href="/Team-Srijan-Sponsorship-Brochure.pdf"><Download size={18} /> Download Brochure</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href="#contact">Contact Sponsorship Team</Link>
+            <Link href="/contact">Contact Sponsorship Team</Link>
           </Button>
         </Reveal>
       </div>
@@ -754,81 +652,6 @@ function Gallery() {
   );
 }
 
-function Contact() {
-  function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
-    const nextInput = event.currentTarget.elements.namedItem("_next");
-
-    if (nextInput instanceof HTMLInputElement) {
-      nextInput.value = `${window.location.origin}/thank-you`;
-    }
-  }
-
-  return (
-    <section id="contact" className="section-pad carbon">
-      <div className="container">
-        <SectionTitle eyebrow="Contact" title="Talk to the team behind the car." copy="For sponsorship, technical collaboration, media, recruitment, or campus invitations, reach the Team Srijan operations desk." />
-        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <Reveal>
-            <Card>
-              <CardContent className="p-6 md:p-8">
-                <form
-                  className="grid gap-4"
-                  aria-label="Contact inquiry form"
-                  action="https://formsubmit.co/teamsrijan2007@gmail.com"
-                  method="POST"
-                  onSubmit={handleContactSubmit}
-                >
-                  <input type="hidden" name="_subject" value="New inquiry from Team Srijan website" />
-                  <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_next" value="/thank-you" />
-                  <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/58">
-                    Name
-                    <input name="name" required type="text" className="h-12 rounded-[6px] border border-white/10 bg-black/35 px-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
-                  </label>
-                  <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/58">
-                    Email
-                    <input name="email" required type="email" className="h-12 rounded-[6px] border border-white/10 bg-black/35 px-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
-                  </label>
-                  <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/58">
-                    Organization
-                    <input name="organization" type="text" className="h-12 rounded-[6px] border border-white/10 bg-black/35 px-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
-                  </label>
-                  <label className="grid gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/58">
-                    Message
-                    <textarea name="message" required rows={6} className="resize-none rounded-[6px] border border-white/10 bg-black/35 p-4 text-base font-normal normal-case tracking-normal text-white outline-none transition focus:border-[#ff5400]" />
-                  </label>
-                  <Button type="submit" size="lg">Send Inquiry <ArrowRight size={18} /></Button>
-                </form>
-              </CardContent>
-            </Card>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <div className="grid gap-4">
-              {contactLinks.map(([Icon, title, text, href]) => (
-                <Link
-                  key={title}
-                  href={href}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="group flex items-center gap-4 rounded-[8px] border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-[#d90429]/55"
-                >
-                  <span className="grid size-12 shrink-0 place-items-center rounded-[6px] bg-[#d90429]/16 text-[#ff5400]"><Icon /></span>
-                  <span>
-                    <span className="block font-display text-sm font-bold">{title}</span>
-                    <span className="mt-1 block text-sm leading-6 text-white/58">{text}</span>
-                  </span>
-                  <ExternalLink className="ml-auto opacity-0 transition group-hover:opacity-100" size={16} />
-                </Link>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black py-10">
@@ -859,8 +682,8 @@ function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm text-white/62 hover:text-white"
                 >
                   {item.label}
@@ -935,7 +758,7 @@ export default function Home() {
           />
         ))}
       </div>
-      <Nav />
+      <SiteNav />
       <Hero />
       <Story />
       <Garage />
@@ -943,7 +766,6 @@ export default function Home() {
       <Sponsorship />
       <Achievements />
       <Gallery />
-      <Contact />
       <Footer />
     </main>
   );
