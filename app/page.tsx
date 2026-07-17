@@ -177,13 +177,18 @@ function Story() {
       <div className="container relative">
         <div className="grid gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center">
           <div>
-            <SectionTitle eyebrow="Our Story" title="Built in Ranchi. Engineered for the grid." copy="Since 2007, Team Srijan has operated like a compact race engineering company: concept, simulate, fabricate, test, fail fast, and return sharper." />
+            <SectionTitle eyebrow="Our Story" title="Where classroom ideas become race cars." copy="Team Srijan began in 2007 with students who wanted to learn engineering by building something real. Today, every batch comes together in the workshop to solve problems, share skills, and prepare a car they are proud to put on the grid." />
+            <Reveal className="-mt-6 mb-10">
+              <Button asChild variant="outline" size="lg">
+                <Link href="/about">Read About Us <ArrowRight size={18} /></Link>
+              </Button>
+            </Reveal>
             <div className="grid gap-4 md:grid-cols-2">
               {[
-                ["2007", "Team founded at BIT Mesra with a mission to bring hands-on race engineering to campus."],
-                ["Design", "Every subsystem is reviewed through manufacturability, reliability, serviceability, and performance."],
-                ["Build", "Members fabricate, wire, test, document, and present the car under global Formula Student rules."],
-                ["Race", "Competition output becomes next-season learning: lighter, faster, cleaner, and more robust."]
+                ["2007", "A small group of BIT Mesra students came together to build the institute's first Formula Student car."],
+                ["Design", "Ideas move from sketches and simulations to parts the team can actually make and trust."],
+                ["Build", "Members spend the season cutting, welding, wiring, testing, and learning from every mistake."],
+                ["Race", "Competition shows us what worked, what did not, and what the next team can improve."]
               ].map(([year, text], index) => (
                 <Reveal key={year} delay={index * 0.08}>
                   <Card className="h-full">

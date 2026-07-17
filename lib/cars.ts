@@ -10,7 +10,7 @@ export const teamCars: TeamCar[] = [
     name: "TSI-07",
     year: "2007",
     image: "/images/TSI-07.png",
-    story: "TSI-07 was the car that turned a bold campus idea into Team Srijan. Built by a young team learning almost everything for the first time, it travelled from BIT Mesra to Silverstone and earned fifth place in Formula Student UK’s Class II—giving every generation after it a starting line."
+    story: "TSI-07 was the car that turned a bold campus idea into Team Srijan. A young team learned almost everything as they went, then took their work from BIT Mesra to Silverstone and earned fifth place in Formula Student UK’s Class II. That first season gave every generation after it a place to begin."
   },
   {
     name: "TSI-11",
@@ -22,7 +22,7 @@ export const teamCars: TeamCar[] = [
     name: "TSI-12",
     year: "2012",
     image: "/images/TSI-12.png",
-    story: "TSI-12 showed what could happen when a returning team began to trust its own process. The car became the second-lightest entry at SUPRA SAE, a memorable sign that Team Srijan was no longer simply rebuilding—it was learning how to make every decision more deliberate."
+    story: "TSI-12 showed what could happen when a returning team began to trust its own process. The car became the second-lightest entry at SUPRA SAE. For the students who built it, that result was a sign that the team had moved beyond rebuilding and was making every decision with more purpose."
   },
   {
     name: "TSI-13",
@@ -40,7 +40,7 @@ export const teamCars: TeamCar[] = [
     name: "TSI-16",
     year: "2016",
     image: "/images/TSI-16.png",
-    story: "TSI-16 was shaped by a season-long focus on making ambition dependable. At Formula Student India, it became the only car with a Royal Enfield engine to clear technical inspection—a quiet but deeply satisfying reward for the long nights spent turning unconventional choices into a competition-ready machine."
+    story: "TSI-16 was shaped by a season-long effort to make an ambitious idea dependable. At Formula Student India, it became the only car with a Royal Enfield engine to clear technical inspection. It was a deeply satisfying reward for all the long nights spent making an unconventional choice work."
   },
   {
     name: "TSI-17",
@@ -52,7 +52,7 @@ export const teamCars: TeamCar[] = [
     name: "TSI-18",
     year: "2018",
     image: "/images/TSI-18.png",
-    story: "TSI-18 became a reminder that Formula Student is about much more than lap time. The team won the Business Plan Presentation, placed sixth in Engineering Design, and finished eleventh overall at Formula Bharat—showing that a strong race program must be imagined, built, and communicated as one."
+    story: "TSI-18 reminded the team that Formula Student is about much more than lap time. The students won the Business Plan Presentation, placed sixth in Engineering Design, and finished eleventh overall at Formula Bharat. It was a season when the work in the workshop and the story behind it came together."
   },
   {
     name: "TSI-19",
@@ -64,7 +64,7 @@ export const teamCars: TeamCar[] = [
     name: "TSE-22",
     year: "2022",
     image: "/images/TSE-22.png",
-    story: "TSE-22 marked Team Srijan’s leap into electric mobility and challenged the team to rethink familiar problems from the ground up. Finishing second overall at Formula Green and winning the Cost Presentation made it a defining chapter—proof that the team’s identity could evolve without losing its competitive spirit."
+    story: "TSE-22 marked Team Srijan’s leap into electric mobility and asked the team to rethink familiar problems from the ground up. A second-place overall finish at Formula Green and a win in the Cost Presentation made it a defining chapter. The technology had changed, but the team’s competitive spirit had not."
   },
   {
     name: "TSI-25",

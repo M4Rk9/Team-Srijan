@@ -60,7 +60,7 @@ export default function AboutPage() {
             About<br /><span className="text-white/48">Team Srijan</span>
           </h1>
           <p className="mt-7 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
-            BIT Mesra&apos;s student-run Formula Student team—designing, manufacturing, and racing single-seater cars from the ground up.
+            We are BIT Mesra&apos;s student-run Formula Student team. Together, we design, manufacture, and race single-seater cars from the ground up.
           </p>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function AboutPage() {
                   Students from diverse engineering disciplines work together to design, analyse, manufacture, test, and race a formula-style car. Every subsystem is developed under real constraints of performance, reliability, cost, and time.
                 </p>
                 <p>
-                  We exist to do more than build a race car. Team Srijan is a proving ground for engineers and leaders—and a platform that carries BIT Mesra&apos;s name onto national and international grids.
+                  We exist to do more than build a race car. Team Srijan gives students room to become engineers and leaders while carrying BIT Mesra&apos;s name onto national and international grids.
                 </p>
               </div>
             </div>
