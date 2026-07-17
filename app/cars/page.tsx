@@ -25,7 +25,7 @@ export default function CarsPage() {
             Every car<br /><span className="text-white/48">tells a story.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
-            Not a technical catalogue, but the human journey behind the machines that shaped Team Srijan—one season, one lesson, and one generation at a time.
+            This is the story of the people and seasons behind the machines that shaped Team Srijan. Each car carries a lesson from one generation to the next.
           </p>
         </div>
       </section>
