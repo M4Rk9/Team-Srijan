@@ -41,7 +41,7 @@ export function JoinApplicationForm() {
     <div className="grid overflow-hidden rounded-[12px] border border-[#3b82f6]/80 bg-[#111216]/94 shadow-[0_28px_100px_rgba(0,0,0,0.45)] lg:grid-cols-[1.08fr_0.92fr]">
       <div className="p-5 sm:p-8 lg:p-10">
         <p className="font-telemetry text-[10px] font-bold uppercase tracking-[0.28em] text-[#ff5400]">Recruitment</p>
-        <h1 className="mt-3 font-display text-[clamp(2rem,4vw,3.4rem)] font-semibold leading-tight text-white">
+        <h1 className="mt-3 font-display text-[clamp(1.7rem,3vw,2.8rem)] font-semibold leading-[1.12] text-white">
           Apply and become a member
         </h1>
         <p className="mt-4 max-w-xl text-sm leading-7 text-white/58">

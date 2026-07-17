@@ -20,7 +20,7 @@ export default function AlumniPage() {
         <div className="container relative z-10">
           <TeamSectionTabs active="alumni" />
           <p className="font-telemetry mt-10 text-xs font-bold uppercase tracking-[0.34em] text-[#ff5400]">The people who built the legacy</p>
-          <h1 className="mt-4 max-w-5xl font-display text-[clamp(3rem,8vw,8rem)] font-bold uppercase leading-[0.88] tracking-[-0.04em]">Team<br /><span className="text-white/42">Alumni</span></h1>
+          <h1 className="mt-4 max-w-5xl font-display text-[clamp(2.3rem,5.3vw,5.2rem)] font-bold uppercase leading-[1.03] tracking-[-0.03em]">Team<br /><span className="text-white/42">Alumni</span></h1>
           <p className="mt-7 max-w-2xl text-base leading-8 text-white/66 md:text-lg">
             Team Srijan has been shaped by students who gave their time, ideas, and energy to every car. This space celebrates the people who built the team, shared what they learned, and helped the next batch go further.
           </p>

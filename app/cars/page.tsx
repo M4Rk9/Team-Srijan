@@ -21,7 +21,7 @@ export default function CarsPage() {
         <div className="telemetry-grid absolute inset-0 opacity-45" />
         <div className="container relative z-10">
           <p className="font-telemetry text-xs font-bold uppercase tracking-[0.34em] text-[#ff5400]">Built across generations · Since 2007</p>
-          <h1 className="mt-5 max-w-5xl font-display text-[clamp(3.2rem,8vw,8.5rem)] font-bold uppercase leading-[0.88] tracking-[-0.04em]">
+          <h1 className="mt-5 max-w-5xl font-display text-[clamp(2.4rem,5.5vw,5.4rem)] font-bold uppercase leading-[1.02] tracking-[-0.03em]">
             Every car<br /><span className="text-white/48">tells a story.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
@@ -34,7 +34,7 @@ export default function CarsPage() {
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <p className="font-telemetry text-xs font-bold uppercase tracking-[0.3em] text-[#ff5400]">The Srijan garage</p>
-            <h2 className="mt-4 font-display text-[clamp(2.5rem,5.5vw,5.8rem)] font-bold leading-[0.92]">A legacy built in chapters.</h2>
+            <h2 className="mt-4 font-display text-[clamp(2rem,4.2vw,4.2rem)] font-bold leading-[1.04]">A legacy built in chapters.</h2>
             <p className="mt-6 text-base leading-8 text-white/62 md:text-lg">
               Each car began as a blank page and ended as a shared memory. Together, they trace how the team learned to rebuild, compete internationally, embrace electric mobility, and keep moving forward.
             </p>
@@ -71,7 +71,7 @@ export default function CarsPage() {
           <div className="flex flex-col items-start justify-between gap-8 rounded-[12px] border border-white/10 bg-[radial-gradient(circle_at_80%_20%,rgba(217,4,41,0.24),transparent_28rem),#111216] p-8 sm:p-12 lg:flex-row lg:items-end">
             <div>
               <p className="font-telemetry text-xs font-bold uppercase tracking-[0.3em] text-[#ff5400]">The next chapter</p>
-              <h2 className="mt-4 max-w-3xl font-display text-[clamp(2.3rem,5vw,5rem)] font-bold leading-[0.94]">The next car starts with the next team.</h2>
+              <h2 className="mt-4 max-w-3xl font-display text-[clamp(1.9rem,3.7vw,3.8rem)] font-bold leading-[1.05]">The next car starts with the next team.</h2>
             </div>
             <Link href="/join" className="inline-flex h-13 shrink-0 items-center justify-center gap-2 rounded-[6px] bg-[#d90429] px-6 text-sm font-bold uppercase tracking-[0.14em] transition hover:bg-[#ff173c]">
               Join Team Srijan <ArrowRight size={18} />

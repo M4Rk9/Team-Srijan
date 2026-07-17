@@ -98,7 +98,7 @@ export default function SponsorsPage() {
 
           <div className="mx-auto max-w-4xl py-12 text-center">
             <p className="font-telemetry mb-4 text-xs font-bold uppercase tracking-[0.34em] text-[#ff5400]">Current Season 2026</p>
-            <h1 className="font-display text-[clamp(2.8rem,7vw,6.8rem)] font-bold uppercase leading-none tracking-[0.05em] text-white">
+            <h1 className="font-display text-[clamp(2.2rem,5vw,4.8rem)] font-bold uppercase leading-[1.05] tracking-[0.04em] text-white">
               Our Sponsors
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/64">

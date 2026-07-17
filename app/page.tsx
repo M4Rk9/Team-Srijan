@@ -97,6 +97,12 @@ function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 700], [0, 160]);
   const opacity = useTransform(scrollY, [0, 650], [1, 0.28]);
+  const telemetryRows = [
+    { label: "THROTTLE", value: "94%", level: 64 },
+    { label: "AERO BALANCE", value: "+2.4", level: 72 },
+    { label: "BATTERY", value: "NOMINAL", level: 80 },
+    { label: "LAP DELTA", value: "-0.831", level: 88 }
+  ];
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
@@ -107,19 +113,20 @@ function Hero() {
       <div className="telemetry-grid absolute inset-0 opacity-60" />
       <motion.div
         aria-hidden
-        className="font-telemetry absolute right-[7vw] top-32 hidden w-72 rounded-[8px] border border-[#ff5400]/30 bg-black/20 p-4 text-xs text-white/60 backdrop-blur md:block"
+        className="font-telemetry absolute right-[5vw] top-32 hidden w-[360px] rounded-[8px] border border-[#ff5400]/30 bg-black/30 p-5 text-[10px] backdrop-blur md:block"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="mb-3 flex items-center justify-between text-[10px] tracking-[0.22em] text-[#ff5400]">
+        <div className="mb-2 flex items-center justify-between tracking-[0.18em] text-[#ff5400]">
           <span>LIVE TELEMETRY</span>
           <Gauge size={16} />
         </div>
-        {["THROTTLE 94%", "AERO BALANCE +2.4", "BATTERY NOMINAL", "LAP DELTA -0.831"].map((item, index) => (
-          <div key={item} className="mb-2 grid grid-cols-[1fr_70px] items-center gap-3">
-            <span>{item}</span>
+        {telemetryRows.map((row, index) => (
+          <div key={row.label} className="grid grid-cols-[125px_72px_1fr] items-center gap-3 border-t border-white/8 py-3 first:border-t-0">
+            <span className="text-white/52">{row.label}</span>
+            <span className="text-right text-white/78">{row.value}</span>
             <span className="h-1 overflow-hidden rounded-full bg-white/10">
-              <motion.span className="block h-full bg-[#d90429]" initial={{ width: 0 }} animate={{ width: `${64 + index * 8}%` }} transition={{ duration: 1.5, delay: index * 0.15 }} />
+              <motion.span className="block h-full bg-[#d90429]" initial={{ width: 0 }} animate={{ width: `${row.level}%` }} transition={{ duration: 1.5, delay: index * 0.15 }} />
             </span>
           </div>
         ))}
@@ -133,7 +140,7 @@ function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.1 }}
-            className="font-display text-[clamp(2.55rem,5vw,6.2rem)] font-bold leading-[0.94] text-white"
+            className="font-display text-[clamp(2.2rem,4.2vw,4.6rem)] font-bold leading-[1.02] text-white"
           >
             Engineering Speed. Forging Innovation. Racing the Future.
           </motion.h1>
@@ -164,7 +171,7 @@ function SectionTitle({ eyebrow, title, copy }: { eyebrow: string; title: string
   return (
     <Reveal className="mb-12 max-w-3xl">
       <p className="font-telemetry mb-3 text-xs font-bold uppercase tracking-[0.32em] text-[#ff5400]">{eyebrow}</p>
-      <h2 className="font-display text-[clamp(2rem,4.8vw,4.7rem)] font-bold leading-none">{title}</h2>
+      <h2 className="font-display text-[clamp(1.75rem,3.4vw,3.4rem)] font-bold leading-[1.08]">{title}</h2>
       {copy && <p className="mt-5 text-base leading-8 text-white/62 md:text-lg">{copy}</p>}
     </Reveal>
   );

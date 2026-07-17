@@ -61,7 +61,7 @@ export default async function SubteamPage({ params }: PageProps) {
           <div className="grid gap-8 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
               <p className="font-telemetry mb-4 text-xs font-bold uppercase tracking-[0.34em] text-[#ff5400]">Team Srijan Subteam</p>
-              <h1 className="font-display text-[clamp(2.7rem,7vw,6.4rem)] font-bold leading-none">
+              <h1 className="font-display text-[clamp(2.2rem,5vw,4.8rem)] font-bold leading-[1.04]">
                 {subteam.title}
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-white/64">
