@@ -22,6 +22,7 @@ import {
   X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TeamSectionTabs } from "@/components/team-section-tabs";
 import { subteams } from "@/lib/subteams";
 
 const heroImage = "/images/team_pic.png";
@@ -138,6 +139,7 @@ export function TeamPageClient() {
 
         <div className="container relative z-10 flex min-h-[calc(100vh-104px)] items-center pb-20">
           <div className="max-w-5xl">
+            <TeamSectionTabs active="current" className="mb-8" />
             <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="font-telemetry mb-5 text-xs font-bold uppercase tracking-[0.38em] text-[#ff5400]">
               Coordinates 23.412 N / 85.440 E
             </motion.p>
