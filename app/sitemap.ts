@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { subteams } from "@/lib/subteams";
 
-const sections = ["", "team", "join", "contact", "sponsors", "thank-you", "#garage", "#team", "#sponsorship", "#achievements", "#gallery"];
+const sections = ["", "about", "team", "join", "contact", "sponsors", "thank-you", "#garage", "#team", "#sponsorship", "#achievements", "#gallery"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const sectionUrls = sections.map((section) => ({
