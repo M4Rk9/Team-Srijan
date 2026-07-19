@@ -15,7 +15,7 @@ import {
 import type { FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 
-const workshopLink = "https://share.google/xjLn4b4wg5qKykeXF";
+const workshopLink = "https://share.google/7m2Qpdg9k4ETL8NJl";
 
 const fieldClass =
   "h-12 w-full rounded-[6px] border border-white/10 bg-black/45 px-4 text-base text-white outline-none transition placeholder:text-white/30 focus:border-[#3b82f6] focus:ring-1 focus:ring-[#3b82f6]/35";
