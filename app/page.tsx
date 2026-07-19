@@ -353,7 +353,7 @@ function Institute() {
               aria-label="Campus of Birla Institute of Technology, Mesra"
               className="h-full min-h-[340px] bg-cover bg-right"
               style={{
-                backgroundImage: "url('/images/bit-mesra-campus.png')",
+                backgroundImage: "url('/images/bit-mesra-campus.webp')",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
