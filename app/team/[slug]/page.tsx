@@ -84,37 +84,37 @@ export default async function SubteamPage({ params }: PageProps) {
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {subteam.members.map((member) => (
-                <article key={`${member.name}-${member.graduationYear}`} className="group overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.045] transition hover:-translate-y-1 hover:border-[#ff5400]/55">
-                  <div className="relative aspect-[4/5] overflow-hidden bg-[#111]">
+                <article key={`${member.name}-${member.graduationYear}`} className="group overflow-hidden rounded-[10px] border border-white/10 bg-[#111216] transition hover:-translate-y-1 hover:border-[#ff5400]/55 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[#0b0b0b]">
                     <Image
                       src={member.photo}
                       alt={`${member.name}, Team Srijan ${subteam.title} member`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                      className="object-cover transition duration-500 group-hover:scale-[1.035]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-transparent to-transparent" />
+                    <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-white/75 backdrop-blur">
+                      <GraduationCap size={14} /> Class of {member.graduationYear}
+                    </span>
                   </div>
                   <div className="p-5">
-                    <h3 className="font-display text-lg font-bold leading-7">{member.name}</h3>
-                    <p className="mt-3 min-h-12 text-sm leading-6 text-white/58">{member.branch}</p>
-                    <p className="mt-4 flex items-center gap-2 border-t border-white/10 pt-4 text-sm text-white/68">
-                      <GraduationCap size={17} className="text-[#ff5400]" />
-                      Graduating {member.graduationYear}
-                    </p>
+                    <h3 className="font-display text-2xl font-bold">{member.name}</h3>
+                    <p className="mt-2 min-h-12 text-sm font-semibold leading-6 text-[#ff5400]">{subteam.title} Subteam</p>
+                    <p className="mt-3 min-h-12 text-sm leading-6 text-white/52">{member.branch}</p>
                     {member.linkedin ? (
                       <Link
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Open ${member.name}'s LinkedIn profile`}
-                        className="mt-4 flex h-11 items-center justify-center gap-2 rounded-[6px] border border-white/12 text-xs font-bold uppercase tracking-[0.14em] text-white/72 transition hover:border-[#ff5400] hover:text-[#ff5400]"
+                        className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-[6px] border border-[#0a66c2]/60 bg-[#0a66c2]/12 text-xs font-bold uppercase tracking-[0.13em] text-[#75b6f3] transition hover:bg-[#0a66c2] hover:text-white"
                       >
                         <Linkedin size={17} />
                         LinkedIn Profile
                       </Link>
                     ) : (
-                      <p className="mt-4 flex h-11 items-center justify-center gap-2 rounded-[6px] border border-white/8 text-xs uppercase tracking-[0.12em] text-white/30">
+                      <p className="mt-5 flex h-11 items-center justify-center gap-2 rounded-[6px] border border-[#0a66c2]/20 bg-[#0a66c2]/5 text-xs uppercase tracking-[0.12em] text-[#75b6f3]/35">
                         <Linkedin size={16} />
                         Profile unavailable
                       </p>
