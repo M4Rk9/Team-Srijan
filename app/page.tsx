@@ -97,12 +97,6 @@ function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 700], [0, 160]);
   const opacity = useTransform(scrollY, [0, 650], [1, 0.28]);
-  const telemetryRows = [
-    { label: "THROTTLE", value: "94%", level: 64 },
-    { label: "AERO BALANCE", value: "+2.4", level: 72 },
-    { label: "BATTERY", value: "NOMINAL", level: 80 },
-    { label: "LAP DELTA", value: "-0.831", level: 88 }
-  ];
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
@@ -117,50 +111,31 @@ function Hero() {
           poster="/images/TSI-25.png"
           aria-hidden="true"
           tabIndex={-1}
-          className="hero-background-video absolute inset-0 h-full w-full object-cover"
+          className="hero-background-video absolute inset-0 h-full w-full object-cover brightness-[1.08] contrast-[1.04] saturate-[1.08]"
         >
           <source src="/videos/team-srijan-hero.mp4" type="video/mp4" />
         </video>
       </motion.div>
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,#0a0a0a_0%,rgba(10,10,10,0.88)_28%,rgba(10,10,10,0.38)_68%,rgba(10,10,10,0.9)_100%)]" />
-      <div className="telemetry-grid absolute inset-0 opacity-60" />
-      <motion.div
-        aria-hidden
-        className="font-telemetry absolute right-[5vw] top-32 hidden w-[360px] rounded-[8px] border border-[#ff5400]/30 bg-black/30 p-5 text-[10px] backdrop-blur md:block"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="mb-2 flex items-center justify-between tracking-[0.18em] text-[#ff5400]">
-          <span>LIVE TELEMETRY</span>
-          <Gauge size={16} />
-        </div>
-        {telemetryRows.map((row, index) => (
-          <div key={row.label} className="grid grid-cols-[125px_72px_1fr] items-center gap-3 border-t border-white/8 py-3 first:border-t-0">
-            <span className="text-white/52">{row.label}</span>
-            <span className="text-right text-white/78">{row.value}</span>
-            <span className="h-1 overflow-hidden rounded-full bg-white/10">
-              <motion.span className="block h-full bg-[#d90429]" initial={{ width: 0 }} animate={{ width: `${row.level}%` }} transition={{ duration: 1.5, delay: index * 0.15 }} />
-            </span>
-          </div>
-        ))}
-      </motion.div>
-      <div className="container relative z-10 flex min-h-screen items-center pt-24">
-        <div className="max-w-4xl">
-          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="font-telemetry mb-5 text-xs font-bold uppercase tracking-[0.36em] text-[#ff5400]">
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,0.82)_0%,rgba(5,5,5,0.58)_32%,rgba(5,5,5,0.12)_60%,rgba(5,5,5,0.08)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.48)_0%,transparent_28%,transparent_68%,rgba(5,5,5,0.72)_100%)]" />
+      <div className="telemetry-grid absolute inset-0 opacity-25" />
+      <div className="container relative z-10 flex min-h-screen items-end pb-24 pt-32 md:items-center md:pb-0">
+        <div className="max-w-[680px]">
+          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="font-telemetry mb-4 text-[10px] font-bold uppercase tracking-[0.32em] text-[#ff5400] md:text-xs">
             Formula Student Team of BIT Mesra
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.1 }}
-            className="font-display text-[clamp(2.2rem,4.2vw,4.6rem)] font-bold leading-[1.02] text-white"
+            className="font-display text-[clamp(2.1rem,3.25vw,3.5rem)] font-bold leading-[1.06] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]"
           >
             Engineering Speed. Forging Innovation. Racing the Future.
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85, delay: 0.22 }} className="mt-7 max-w-2xl text-base leading-8 text-white/72 md:text-lg">
+          <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85, delay: 0.22 }} className="mt-5 max-w-xl text-sm leading-7 text-white/76 md:text-base">
             Team Srijan is the official Formula Student team of BIT Mesra, designing and manufacturing high-performance open-wheel race cars for national and international competitions.
           </motion.p>
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85, delay: 0.34 }} className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85, delay: 0.34 }} className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
               <Link href="/sponsors">Sponsor Us <ArrowRight size={18} /></Link>
             </Button>
