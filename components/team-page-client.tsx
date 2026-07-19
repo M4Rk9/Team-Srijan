@@ -28,7 +28,7 @@ import { subteams } from "@/lib/subteams";
 const heroImage = "/images/team_pic.png";
 
 const stats = [
-  [2007, "", "Founded At BIT Mesra"],
+  [2007, "", "Founded At Birla Institute of Technology, Mesra"],
   [7, "", "Engineering Subsystems"],
   [1, "", "Formula Student Car Every Season"],
   [19, "+", "Years of Legacy"]
@@ -133,7 +133,7 @@ export function TeamPageClient() {
           </Link>
           <div className="flex items-center gap-3">
             <Image src="/images/team-srijan-logo.png" alt="Team Srijan logo" width={58} height={58} className="h-12 w-12 object-contain" />
-            <Image src="/images/bit-mesra-logo.png" alt="BIT Mesra logo" width={46} height={46} className="h-10 w-10 object-contain" />
+            <Image src="/images/bit-mesra-logo.png" alt="Birla Institute of Technology, Mesra logo" width={46} height={46} className="h-10 w-10 object-contain" />
           </div>
         </nav>
 

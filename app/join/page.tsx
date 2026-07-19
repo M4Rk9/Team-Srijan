@@ -4,7 +4,7 @@ import { SiteNav } from "@/components/site-nav";
 
 export const metadata: Metadata = {
   title: "Join Team Srijan",
-  description: "Apply to join a Team Srijan technical or management subteam at BIT Mesra."
+  description: "Apply to join a Team Srijan technical or management subteam at Birla Institute of Technology, Mesra."
 };
 
 export default function JoinPage() {

@@ -60,7 +60,7 @@ export default async function SubteamPage({ params }: PageProps) {
             </Link>
             <div className="flex items-center gap-3">
               <Image src="/images/team-srijan-logo.png" alt="Team Srijan logo" width={58} height={58} className="h-12 w-12 object-contain" />
-              <Image src="/images/bit-mesra-logo.png" alt="BIT Mesra logo" width={46} height={46} className="h-10 w-10 object-contain" />
+              <Image src="/images/bit-mesra-logo.png" alt="Birla Institute of Technology, Mesra logo" width={46} height={46} className="h-10 w-10 object-contain" />
             </div>
           </nav>
 

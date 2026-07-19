@@ -18,7 +18,7 @@ export default function ThankYouPage() {
         <div className="relative z-10 w-full max-w-3xl rounded-[8px] border border-white/10 bg-white/[0.055] p-8 text-center shadow-2xl shadow-black/40 backdrop-blur-xl md:p-12">
           <div className="mx-auto mb-8 flex w-fit items-center gap-4">
             <Image src="/images/team-srijan-logo.png" alt="Team Srijan logo" width={72} height={72} className="h-16 w-16 object-contain" />
-            <Image src="/images/bit-mesra-logo.png" alt="BIT Mesra logo" width={56} height={56} className="h-12 w-12 object-contain" />
+            <Image src="/images/bit-mesra-logo.png" alt="Birla Institute of Technology, Mesra logo" width={56} height={56} className="h-12 w-12 object-contain" />
           </div>
           <CheckCircle2 className="mx-auto mb-6 text-[#ff5400]" size={54} />
           <p className="font-telemetry mb-4 text-xs font-bold uppercase tracking-[0.34em] text-[#ff5400]">Inquiry Submitted</p>
