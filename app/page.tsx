@@ -54,17 +54,6 @@ const sponsorReasons = [
   ],
 ] as const;
 
-const competitionLinks = [
-  ["Supra SAE", "https://www.suprasaeindia.org/"],
-  ["Formula Bharat", "https://formulabharat.com/"],
-  ["Formula Student UK", "https://www.imeche.org/events/formula-student"],
-  ["Formula Student Italy", "https://www.formula-ata.it/formula-sae-italy/"],
-  [
-    "Formula Student Germany",
-    "https://www.formulastudent.de/teams/fse/details/tid/1132/",
-  ],
-] as const;
-
 function Reveal({
   children,
   delay = 0,
@@ -366,6 +355,45 @@ function Institute() {
   );
 }
 
+function WhoWeAre() {
+  return (
+    <section
+      id="who-we-are"
+      className="section-pad relative overflow-hidden bg-[#0d0d0d]"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(217,4,41,0.16),transparent_30rem)]" />
+      <div className="container relative grid gap-10 lg:grid-cols-[0.58fr_1fr] lg:gap-16">
+        <Reveal>
+          <p className="font-telemetry text-xs font-semibold uppercase tracking-[0.16em] text-[#ff5400]">
+            Who We Are
+          </p>
+          <h2 className="mt-4 font-display text-[clamp(2rem,4vw,3.8rem)] font-bold leading-[1.02] tracking-[-0.01em]">
+            One team. Every discipline.
+          </h2>
+        </Reveal>
+        <Reveal delay={0.1} className="grid gap-5 text-base leading-8 text-white/66 md:text-lg">
+          <p>
+            Team Srijan is Birla Institute of Technology, Mesra&apos;s student-run
+            Formula SAE program. Established in 2007, we are one of the
+            institute&apos;s oldest and most established technical clubs.
+          </p>
+          <p>
+            Students from diverse engineering disciplines work together to
+            design, analyse, manufacture, test, and race a formula-style car.
+            Every subsystem is developed under real constraints of performance,
+            reliability, cost, and time.
+          </p>
+          <p>
+            We exist to do more than build a race car. Team Srijan gives students
+            room to become engineers and leaders while carrying Birla Institute
+            of Technology, Mesra&apos;s name onto national and international grids.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function Story() {
   return (
     <section id="story" className="section-pad carbon relative overflow-hidden">
@@ -527,7 +555,7 @@ function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black py-10">
       <div className="container">
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr_1fr]">
+        <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
               <span className="grid size-12 place-items-center overflow-hidden rounded-[6px] bg-white">
@@ -586,25 +614,6 @@ function Footer() {
               ))}
             </div>
           </div>
-          <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-white/45">
-              Competitions
-            </p>
-            <div className="grid gap-2">
-              {competitionLinks.map(([label, href]) => (
-                <Link
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex h-11 items-center justify-between rounded-[6px] border border-white/10 bg-white/[0.04] px-4 text-[10px] font-bold uppercase tracking-[0.16em] text-white/50 transition hover:border-[#ff5400]/60 hover:text-white"
-                >
-                  {label}
-                  <ExternalLink size={14} />
-                </Link>
-              ))}
-            </div>
-          </div>
         </div>
         <div className="mt-10 flex flex-col justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/42 md:flex-row">
           <p>
@@ -657,6 +666,7 @@ export default function Home() {
       <SiteNav />
       <Hero />
       <FormulaStudent />
+      <WhoWeAre />
       <Institute />
       <Footer />
     </main>
