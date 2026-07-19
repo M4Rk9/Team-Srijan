@@ -95,7 +95,7 @@ export function ContactPageContent() {
               <ContactCard
                 icon={MapPin}
                 title="Address"
-                copy="Production Department, Birla Institute of Technology, Mesra, Ranchi, Jharkhand – 835215"
+                copy="Team Srijan Manufacturing House, Birla Institute of Technology, Mesra, Ranchi, Jharkhand – 835215"
                 href={workshopLink}
               />
             </div>
@@ -133,7 +133,7 @@ export function ContactPageContent() {
           <div className="min-h-80 bg-white">
             <iframe
               title="Team Srijan workshop location at BIT Mesra"
-              src="https://www.google.com/maps?q=Production+Department,+Birla+Institute+of+Technology,+Mesra,+Ranchi,+Jharkhand+835215&output=embed"
+              src="https://www.google.com/maps?q=23.411009,85.4403597&z=19&output=embed"
               className="h-full min-h-80 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
