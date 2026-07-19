@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Team | Team Srijan",
     description:
-      "A premium look at the multidisciplinary Team Srijan race program, leadership, subsystems, culture, and members.",
-    images: ["/images/TSI-25.png"]
-  }
+      "Meet the current K23, K24, and K25 members of Team Srijan across every engineering and management subteam.",
+    images: ["/images/TSI-25.png"],
+  },
 };
 
 export default function TeamPage() {
