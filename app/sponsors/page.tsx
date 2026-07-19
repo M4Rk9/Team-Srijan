@@ -37,6 +37,18 @@ const sponsors = [
     logo: "/images/Magod Lazer.png",
   },
   {
+    category: "Silver Sponsor",
+    name: "SNCurve Industries",
+    href: "https://www.instagram.com/sn_curve_industries/",
+    logo: "/images/sncurve-industries.png",
+  },
+  {
+    category: "Silver Sponsor",
+    name: "Objectify Technologies",
+    href: "https://objectify.co.in",
+    logo: "/images/objectify-technologies.png",
+  },
+  {
     category: "Software Sponsor",
     name: "Dassault Systèmes",
     href: "https://www.3ds.com/",
