@@ -7,7 +7,7 @@ import { teamCars } from "@/lib/cars";
 
 export const metadata: Metadata = {
   title: "Our Cars",
-  description: "Explore the story of every documented Team Srijan Formula Student car, from TSI-07 to TSI-25."
+  description: "Explore the story of every documented Team Srijan Formula Student car, from FS-07 and BMRO51 to TSI-25."
 };
 
 export default function CarsPage() {
