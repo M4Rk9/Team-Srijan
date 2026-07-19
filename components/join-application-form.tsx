@@ -84,8 +84,8 @@ export function JoinApplicationForm() {
               <input className={inputClass} name="lastName" type="text" autoComplete="family-name" required />
             </label>
             <label className={labelClass}>
-              Email
-              <input className={inputClass} name="email" type="email" autoComplete="email" placeholder="you@bitmesra.ac.in" required />
+              Personal email
+              <input className={inputClass} name="email" type="email" autoComplete="email" placeholder="name@gmail.com" required />
             </label>
             <label className={labelClass}>
               Mobile number
