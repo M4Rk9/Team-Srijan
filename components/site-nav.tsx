@@ -85,14 +85,14 @@ export function SiteNav() {
               setShowRaceIntro(true);
             }}
             aria-label="Play the Team Srijan race introduction"
-            className="grid size-16 cursor-pointer place-items-center rounded-[6px] transition hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5400]"
+            className="flex h-16 w-32 cursor-pointer items-center justify-start rounded-[6px] transition hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5400] sm:w-36"
           >
             <Image
-              src="/images/team-srijan-logo.png"
+              src="/images/team-srijan-header-logo.png"
               alt="Team Srijan"
-              width={72}
-              height={72}
-              className="h-16 w-16 object-contain"
+              width={180}
+              height={88}
+              className="h-[60px] w-auto max-w-full object-contain"
               priority
             />
           </button>
