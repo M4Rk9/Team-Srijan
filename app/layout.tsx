@@ -1,58 +1,81 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource/michroma/400.css";
-import "@fontsource/titillium-web/400.css";
-import "@fontsource/titillium-web/600.css";
-import "@fontsource/titillium-web/700.css";
-import "@fontsource/titillium-web/900.css";
+import { Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
+
+const barlow = Barlow({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-barlow",
+  display: "swap",
+});
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-barlow-condensed",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://teamsrijan.bitmesra.ac.in"),
   title: {
-    default: "Team Srijan | Formula Student Team of BIT Mesra",
-    template: "%s | Team Srijan"
+    default:
+      "Team Srijan | Formula Student at Birla Institute of Technology, Mesra",
+    template: "%s | Team Srijan",
   },
   description:
-    "Team Srijan is BIT Mesra's Formula Student team, engineering high-performance open-wheel race cars for national and international competitions.",
+    "Team Srijan designs, builds, and races Formula Student cars at Birla Institute of Technology, Mesra.",
   keywords: [
     "Team Srijan",
-    "BIT Mesra",
+    "Birla Institute of Technology, Mesra",
     "Formula Student India",
     "Formula Bharat",
     "SUPRA SAEINDIA",
-    "motorsport engineering"
+    "motorsport engineering",
   ],
   openGraph: {
-    title: "Team Srijan | Engineering Speed. Forging Innovation.",
+    title: "Team Srijan | Our Hearts Don't Beat. They Revv!",
     description:
-      "A globally competitive student motorsport organization designing and manufacturing Formula Student race cars.",
+      "The student-run Formula Student team of Birla Institute of Technology, Mesra.",
     url: "https://teamsrijan.bitmesra.ac.in",
     siteName: "Team Srijan",
-    images: [{ url: "/images/srijan-hero.png", width: 1536, height: 1024, alt: "Team Srijan Formula Student race car" }],
+    images: [
+      {
+        url: "/images/srijan-hero.png",
+        width: 1536,
+        height: 1024,
+        alt: "Team Srijan Formula Student race car",
+      },
+    ],
     locale: "en_IN",
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Team Srijan | Formula Student Team of BIT Mesra",
-    description: "Engineering Speed. Forging Innovation. Racing the Future.",
-    images: ["/images/srijan-hero.png"]
+    title:
+      "Team Srijan | Formula Student at Birla Institute of Technology, Mesra",
+    description: "Our Hearts Don't Beat. They Revv!",
+    images: ["/images/srijan-hero.png"],
   },
   icons: {
-    icon: "/favicon.ico"
-  }
+    icon: "/favicon.ico",
+  },
 };
 
 export const viewport: Viewport = {
   themeColor: "#0A0A0A",
   width: "device-width",
-  initialScale: 1
+  initialScale: 1,
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${barlow.variable} ${barlowCondensed.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
