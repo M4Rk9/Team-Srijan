@@ -4,8 +4,7 @@ import { SiteNav } from "@/components/site-nav";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description:
-    "Contact Team Srijan for sponsorship, collaboration, recruitment, media, or workshop visits at Birla Institute of Technology, Mesra.",
+  description: "Contact Team Srijan for sponsorship, collaboration, recruitment, media, or workshop visits at Birla Institute of Technology, Mesra."
 };
 
 export default function ContactPage() {
