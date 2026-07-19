@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Thank You | Team Srijan",
-  description:
-    "Thank you for contacting Team Srijan. We will get back to you soon.",
+  description: "Thank you for contacting Team Srijan. We will get back to you soon."
 };
 
 export default function ThankYouPage() {
@@ -18,31 +17,16 @@ export default function ThankYouPage() {
         <div className="telemetry-grid absolute inset-0 opacity-45" />
         <div className="relative z-10 w-full max-w-3xl rounded-[8px] border border-white/10 bg-white/[0.055] p-8 text-center shadow-2xl shadow-black/40 backdrop-blur-xl md:p-12">
           <div className="mx-auto mb-8 flex w-fit items-center gap-4">
-            <Image
-              src="/images/team-srijan-logo.png"
-              alt="Team Srijan logo"
-              width={72}
-              height={72}
-              className="h-16 w-16 object-contain"
-            />
-            <Image
-              src="/images/bit-mesra-logo.png"
-              alt="Birla Institute of Technology, Mesra logo"
-              width={56}
-              height={56}
-              className="h-12 w-12 object-contain"
-            />
+            <Image src="/images/team-srijan-logo.png" alt="Team Srijan logo" width={72} height={72} className="h-16 w-16 object-contain" />
+            <Image src="/images/bit-mesra-logo.png" alt="Birla Institute of Technology, Mesra logo" width={56} height={56} className="h-12 w-12 object-contain" />
           </div>
           <CheckCircle2 className="mx-auto mb-6 text-[#ff5400]" size={54} />
-          <p className="font-telemetry mb-4 text-xs font-bold uppercase tracking-[0.34em] text-[#ff5400]">
-            Inquiry Submitted
-          </p>
+          <p className="font-telemetry mb-4 text-xs font-bold uppercase tracking-[0.34em] text-[#ff5400]">Inquiry Submitted</p>
           <h1 className="font-display text-[clamp(1.8rem,3.8vw,3.8rem)] font-bold leading-[1.05]">
             Thank you for submitting the form.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/65 md:text-lg">
-            We have received your inquiry. Team Srijan will review your message
-            and get back to you soon.
+            We have received your inquiry. Team Srijan will review your message and get back to you soon.
           </p>
           <div className="mt-9 flex justify-center">
             <Button asChild size="lg">
