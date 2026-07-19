@@ -160,7 +160,7 @@ function Hero() {
           </motion.div>
         </div>
       </div>
-      <motion.a href="#story" aria-label="Scroll to story" className="absolute bottom-8 left-1/2 z-10 grid -translate-x-1/2 place-items-center gap-2 text-xs uppercase tracking-[0.24em] text-white/55" animate={{ y: [0, 8, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
+      <motion.a href="#formula-student" aria-label="Scroll to Formula Student introduction" className="absolute bottom-8 left-1/2 z-10 grid -translate-x-1/2 place-items-center gap-2 text-xs uppercase tracking-[0.24em] text-white/55" animate={{ y: [0, 8, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
         <ChevronDown />
       </motion.a>
     </section>
@@ -174,6 +174,66 @@ function SectionTitle({ eyebrow, title, copy }: { eyebrow: string; title: string
       <h2 className="font-display text-[clamp(1.75rem,3.4vw,3.4rem)] font-bold leading-[1.08]">{title}</h2>
       {copy && <p className="mt-5 text-base leading-8 text-white/62 md:text-lg">{copy}</p>}
     </Reveal>
+  );
+}
+
+function FormulaStudent() {
+  const competitionStages = [
+    ["Static Events", "The team explains its engineering choices, costs, and business thinking."],
+    ["Dynamic Events", "The car is tested through acceleration, skidpad, autocross, and endurance runs."],
+    ["One Complete Team", "Design, manufacturing, driving, logistics, and presentation all matter on competition day."]
+  ] as const;
+
+  return (
+    <section id="formula-student" className="section-pad relative overflow-hidden bg-[#080808]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_32%,rgba(255,84,0,0.14),transparent_30rem)]" />
+      <div className="container relative grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-[8px] border border-white/10 bg-[#111]">
+            <Image
+              src="/images/TSE-22.png"
+              alt="Team Srijan car taking part in a Formula Student track event"
+              width={1200}
+              height={900}
+              sizes="(max-width: 1024px) 100vw, 48vw"
+              className="aspect-[4/3] w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-transparent to-transparent" />
+            <p className="font-telemetry absolute bottom-5 left-5 right-5 text-[10px] font-bold uppercase tracking-[0.24em] text-white/76">
+              Ideas are judged on paper, then proven on track
+            </p>
+          </div>
+        </Reveal>
+
+        <div>
+          <SectionTitle
+            eyebrow="The Competition"
+            title="What is Formula Student?"
+            copy="Formula Student is a global university competition where students take a race car from the first sketch to the finish line. Teams are judged on their design decisions, cost and business thinking, then put the car through demanding track events. The quickest lap matters, but so do safety, reliability, preparation, and how well the team works together."
+          />
+          <div className="-mt-5 grid gap-3">
+            {competitionStages.map(([title, copy], index) => (
+              <Reveal key={title} delay={index * 0.06}>
+                <div className="grid grid-cols-[auto_1fr] gap-4 border-t border-white/10 py-4">
+                  <span className="font-display text-sm font-bold text-[#ff5400]">0{index + 1}</span>
+                  <div>
+                    <h3 className="font-display text-sm font-bold">{title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-white/58">{copy}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-5">
+            <Button asChild variant="outline" size="lg">
+              <Link href="https://www.imeche.org/events/formula-student" target="_blank" rel="noopener noreferrer">
+                Explore Formula Student <ExternalLink size={17} />
+              </Link>
+            </Button>
+          </Reveal>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -224,7 +284,7 @@ function Story() {
                 {[
                   [2007, "Founded", ""],
                   [19, "Years", "+"],
-                  [40, "Members", "+"],
+                  [12, "Cars Built", ""],
                   [5, "Competition Formats", "+"]
                 ].map(([value, label, suffix]) => (
                   <div key={label} className="border border-white/10 bg-black/55 p-3 backdrop-blur">
@@ -309,7 +369,7 @@ function Sponsorship() {
         <div className="my-12 grid gap-4 border-y border-white/10 py-7 md:grid-cols-4">
           {[
             [2, "campus reach", "K+"],
-            [40, "engineers", "+"],
+            [7, "subsystems", ""],
             [19, "years legacy", "+"],
             [17, "Events", "+"]
           ].map(([value, label, suffix]) => (
@@ -440,6 +500,7 @@ export default function Home() {
       </div>
       <SiteNav />
       <Hero />
+      <FormulaStudent />
       <Story />
       <Team />
       <Sponsorship />

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Linkedin, Users } from "lucide-react";
-import { batches, getSubteam, subteams } from "@/lib/subteams";
+import { ArrowLeft, GraduationCap, Linkedin } from "lucide-react";
+import { getSubteam, subteams } from "@/lib/subteams";
 
 type PageProps = {
   params: Promise<{
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${subteam.title} | Team Srijan`,
-    description: `Meet the ${subteam.title} subteam of Team Srijan, grouped by K23 and K24 batches.`
+    description: `Meet the students working with the ${subteam.title} subteam of Team Srijan.`
   };
 }
 
@@ -58,7 +58,7 @@ export default async function SubteamPage({ params }: PageProps) {
             </div>
           </nav>
 
-          <div className="grid gap-8 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div className="grid gap-8 py-12 lg:grid-cols-[1fr_0.7fr] lg:items-end">
             <div>
               <p className="font-telemetry mb-4 text-xs font-bold uppercase tracking-[0.34em] text-[#ff5400]">Team Srijan Subteam</p>
               <h1 className="font-display text-[clamp(2.2rem,5vw,4.8rem)] font-bold leading-[1.04]">
@@ -68,72 +68,62 @@ export default async function SubteamPage({ params }: PageProps) {
                 {subteam.summary}
               </p>
             </div>
-            <div className="grid gap-3 border-y border-white/10 py-6 sm:grid-cols-2">
-              {batches.map((batch) => {
-                const count = subteam.members.filter((member) => member.batch === batch).length;
-
-                return (
-                  <div key={batch} className="rounded-[8px] border border-white/10 bg-black/35 p-5">
-                    <p className="font-display text-4xl font-bold">{count}</p>
-                    <p className="font-telemetry mt-2 text-xs uppercase tracking-[0.22em] text-white/45">{batch} Members</p>
-                  </div>
-                );
-              })}
+            <div className="border-l-2 border-[#ff5400] bg-black/35 p-6">
+              <p className="font-telemetry text-[10px] font-bold uppercase tracking-[0.28em] text-[#ff5400]">Built Together</p>
+              <p className="mt-4 text-sm leading-7 text-white/60">
+                Different branches bring different ways of thinking to the same car. Meet the students turning that mix of ideas into dependable work on track.
+              </p>
             </div>
           </div>
 
-          <div className="grid gap-12">
-            {batches.map((batch) => {
-              const batchMembers = subteam.members.filter((member) => member.batch === batch);
+          <section aria-labelledby="member-heading">
+            <div className="mb-6 border-b border-white/10 pb-4">
+              <p className="font-telemetry text-[10px] font-bold uppercase tracking-[0.28em] text-[#ff5400]">The Subteam</p>
+              <h2 id="member-heading" className="mt-2 font-display text-3xl font-bold">Meet the team</h2>
+            </div>
 
-              return (
-                <section key={batch} aria-labelledby={`${batch}-heading`}>
-                  <div className="mb-5 flex items-center justify-between gap-4 border-b border-white/10 pb-4">
-                    <div>
-                      <p className="font-telemetry text-[10px] font-bold uppercase tracking-[0.28em] text-[#ff5400]">Batch</p>
-                      <h2 id={`${batch}-heading`} className="mt-2 font-display text-3xl font-bold">{batch}</h2>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-white/52">
-                      <Users size={18} />
-                      {batchMembers.length} members
-                    </div>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {subteam.members.map((member) => (
+                <article key={`${member.name}-${member.graduationYear}`} className="group overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.045] transition hover:-translate-y-1 hover:border-[#ff5400]/55">
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[#111]">
+                    <Image
+                      src={member.photo}
+                      alt={`${member.name}, Team Srijan ${subteam.title} member`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
                   </div>
-
-                  <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                    {batchMembers.length === 0 ? (
-                      <p className="col-span-full rounded-[8px] border border-dashed border-white/10 bg-white/[0.025] p-5 text-sm text-white/42">
-                        No members listed for this batch.
+                  <div className="p-5">
+                    <h3 className="font-display text-lg font-bold leading-7">{member.name}</h3>
+                    <p className="mt-3 min-h-12 text-sm leading-6 text-white/58">{member.branch}</p>
+                    <p className="mt-4 flex items-center gap-2 border-t border-white/10 pt-4 text-sm text-white/68">
+                      <GraduationCap size={17} className="text-[#ff5400]" />
+                      Graduating {member.graduationYear}
+                    </p>
+                    {member.linkedin ? (
+                      <Link
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${member.name}'s LinkedIn profile`}
+                        className="mt-4 flex h-11 items-center justify-center gap-2 rounded-[6px] border border-white/12 text-xs font-bold uppercase tracking-[0.14em] text-white/72 transition hover:border-[#ff5400] hover:text-[#ff5400]"
+                      >
+                        <Linkedin size={17} />
+                        LinkedIn Profile
+                      </Link>
+                    ) : (
+                      <p className="mt-4 flex h-11 items-center justify-center gap-2 rounded-[6px] border border-white/8 text-xs uppercase tracking-[0.12em] text-white/30">
+                        <Linkedin size={16} />
+                        Profile unavailable
                       </p>
-                    ) : batchMembers.map((member) => (
-                      <article key={`${member.batch}-${member.name}-${member.responsibility}`} className="rounded-[8px] border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-[#ff5400]/55">
-                        <div className="flex items-start justify-between gap-4">
-                          <div>
-                            <h3 className="font-display text-xl font-bold">{member.name}</h3>
-                            <p className="mt-2 text-sm font-bold text-[#ff5400]">{member.responsibility}</p>
-                          </div>
-                          {member.linkedin ? (
-                            <Link
-                              href={member.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              aria-label={`${member.name} LinkedIn`}
-                              className="grid size-10 shrink-0 place-items-center rounded-[6px] border border-white/10 text-white/62 transition hover:border-[#ff5400] hover:text-[#ff5400]"
-                            >
-                              <Linkedin size={18} />
-                            </Link>
-                          ) : null}
-                        </div>
-                        <div className="mt-5 grid gap-2 text-sm text-white/55">
-                          <p><span className="font-bold text-white/78">Batch:</span> {member.batch}</p>
-                          {member.department ? <p><span className="font-bold text-white/78">Department:</span> {member.department}</p> : null}
-                        </div>
-                      </article>
-                    ))}
+                    )}
                   </div>
-                </section>
-              );
-            })}
-          </div>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
       </section>
     </main>

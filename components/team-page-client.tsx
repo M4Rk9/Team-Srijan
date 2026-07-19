@@ -28,7 +28,7 @@ import { subteams } from "@/lib/subteams";
 const heroImage = "/images/team_pic.png";
 
 const stats = [
-  [40, "+", "Team Members"],
+  [2007, "", "Founded At BIT Mesra"],
   [7, "", "Engineering Subsystems"],
   [1, "", "Formula Student Car Every Season"],
   [19, "+", "Years of Legacy"]
