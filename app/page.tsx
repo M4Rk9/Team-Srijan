@@ -327,10 +327,16 @@ function Institute() {
               Where Team Srijan calls home.
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-black/66 md:text-lg">
-              Founded in 1955, Birla Institute of Technology, Mesra is one of
-              India&apos;s oldest institutes of technology. From our workshop in
-              Mesra, students turn calculations, CAD models, and raw material
-              into a complete Formula Student car.
+              Established in 1955 by the visionary Industrialist Mr. B.M. Birla,
+              Birla Institute of Technology, Mesra is a premier technical
+              institute and a deemed university under the governance of the C.K.
+              Birla group. 70 years down the line, the zeal to carry forward our
+              mission and vision still burns in our hearts. Every BITian works
+              with a single agenda of making BIT a globally recognized academic
+              institution in consonance with the social, economic, and
+              ecological environment, striving continuously for excellence in
+              education, research, and technological services to the national
+              needs.
             </p>
             <Link
               href="https://www.bitmesra.ac.in/"
@@ -348,9 +354,9 @@ function Institute() {
               className="h-full min-h-[340px] bg-cover bg-right"
               style={{
                 backgroundImage: "url('/images/bit-mesra-campus.png')",
-                backgroundPosition: "right center",
+                backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "243% auto",
+                backgroundSize: "cover",
               }}
             />
           </Reveal>
