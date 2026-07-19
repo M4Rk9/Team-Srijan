@@ -658,8 +658,6 @@ export default function Home() {
       <Hero />
       <FormulaStudent />
       <Institute />
-      <Story />
-      <Sponsorship />
       <Footer />
     </main>
   );
