@@ -2,43 +2,28 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Cars", href: "/cars" },
-  { label: "News", href: "/#news" },
   { label: "Sponsors", href: "/sponsors" },
   { label: "Join Us", href: "/join" },
-  { label: "Contact Us", href: "/contact" }
+  { label: "Contact Us", href: "/contact" },
 ] as const;
 
-const speedLines = [12, 23, 35, 49, 63, 76, 87];
-
-function RaceCar() {
-  return (
-    <svg viewBox="0 0 280 96" className="h-auto w-64 sm:w-80" aria-hidden>
-      <path d="M12 61h38l21-25h78l31 13h55l33 12-12 17H24Z" fill="#d90429" />
-      <path d="M83 39h58l22 10H72Z" fill="#f4f4f5" fillOpacity="0.92" />
-      <path d="M180 49h43l20 8h-52Z" fill="#ff5400" />
-      <path d="M19 56h31l11-13H39Z" fill="#edf2f4" />
-      <circle cx="72" cy="76" r="17" fill="#080808" stroke="#edf2f4" strokeWidth="4" />
-      <circle cx="72" cy="76" r="6" fill="#d90429" />
-      <circle cx="221" cy="76" r="17" fill="#080808" stroke="#edf2f4" strokeWidth="4" />
-      <circle cx="221" cy="76" r="6" fill="#d90429" />
-      <path d="M1 69h42M4 77h28M237 45h37" stroke="#ff5400" strokeWidth="4" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 export function SiteNav() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [solid, setSolid] = useState(false);
   const [showRaceIntro, setShowRaceIntro] = useState(false);
+  const brandButtonRef = useRef<HTMLButtonElement>(null);
+  const raceWasOpen = useRef(false);
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -49,14 +34,21 @@ export function SiteNav() {
   }, []);
 
   useEffect(() => {
-    if (!showRaceIntro) return;
+    if (!showRaceIntro) {
+      if (raceWasOpen.current) {
+        raceWasOpen.current = false;
+        window.requestAnimationFrame(() => brandButtonRef.current?.focus());
+      }
+      return;
+    }
 
+    raceWasOpen.current = true;
     const previousOverflow = document.body.style.overflow;
     const closeIntro = () => setShowRaceIntro(false);
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") closeIntro();
     };
-    const timer = window.setTimeout(closeIntro, reduceMotion ? 1800 : 4200);
+    const timer = window.setTimeout(closeIntro, reduceMotion ? 1800 : 3200);
 
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKeyDown);
@@ -67,95 +59,110 @@ export function SiteNav() {
     };
   }, [reduceMotion, showRaceIntro]);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   return (
     <>
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 border-b transition-all duration-300",
           solid
-            ? "border-white/10 bg-[#0a0a0a]/88 shadow-2xl shadow-black/35 backdrop-blur-xl"
-            : "border-transparent bg-gradient-to-b from-black/70 to-transparent"
+            ? "border-white/10 bg-[#0a0a0a]/92 shadow-2xl shadow-black/35 backdrop-blur-xl"
+            : "border-transparent bg-gradient-to-b from-black/78 to-transparent",
         )}
       >
-        <nav className="container flex h-20 items-center justify-between" aria-label="Primary navigation">
-          <div className="flex items-center gap-3 sm:gap-5">
+        <nav
+          className="container flex h-[72px] items-center justify-between"
+          aria-label="Primary navigation"
+        >
           <button
+            ref={brandButtonRef}
             type="button"
-            onClick={() => { setOpen(false); setShowRaceIntro(true); }}
-            aria-label="Play Team Srijan race animation"
-            className="flex cursor-pointer items-center gap-3 text-left"
+            onClick={() => {
+              setOpen(false);
+              setShowRaceIntro(true);
+            }}
+            aria-label="Play the Team Srijan race introduction"
+            className="grid size-16 cursor-pointer place-items-center rounded-[6px] transition hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff5400]"
           >
             <Image
               src="/images/team-srijan-logo.png"
               alt="Team Srijan"
-              width={64}
-              height={64}
-              className="h-14 w-14 object-contain"
+              width={72}
+              height={72}
+              className="h-16 w-16 object-contain"
               priority
             />
-            <span className="hidden sm:block">
-              <span className="block font-display text-sm tracking-[0.18em]">TEAM SRIJAN</span>
-              <span className="block text-[9px] uppercase tracking-[0.24em] text-white/50">Formula Student</span>
-            </span>
           </button>
-          <span className="hidden h-9 w-px bg-white/18 sm:block" aria-hidden />
-          <Link
-            href="https://www.bitmesra.ac.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open BIT Mesra website in a new tab"
-            className="hidden items-center gap-2 sm:flex"
+
+          <div className="hidden items-center gap-6 lg:flex xl:gap-8">
+            {navItems.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "font-telemetry group relative py-3 text-[11px] font-semibold uppercase tracking-[0.1em] transition",
+                    active ? "text-white" : "text-white/72 hover:text-white",
+                  )}
+                >
+                  {item.label}
+                  <span
+                    className={cn(
+                      "absolute inset-x-0 bottom-1 h-0.5 origin-left bg-[#ff5400] transition-transform duration-300",
+                      active
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100",
+                    )}
+                  />
+                </Link>
+              );
+            })}
+          </div>
+
+          <button
+            type="button"
+            className="grid size-11 place-items-center rounded-[6px] border border-white/15 bg-black/30 lg:hidden"
+            onClick={() => setOpen((value) => !value)}
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-expanded={open}
           >
-            <Image
-              src="/images/bit-mesra-logo.png"
-              alt="BIT Mesra"
-              width={42}
-              height={42}
-              className="h-10 w-10 object-contain"
-            />
-            <span className="text-[9px] font-bold uppercase leading-4 tracking-[0.18em] text-white/55">
-              BIT<br />Mesra
-            </span>
-          </Link>
-        </div>
-
-        <div className="hidden items-center gap-6 xl:gap-8 lg:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="font-telemetry group relative py-3 text-[10px] font-bold uppercase tracking-[0.08em] text-white/78 transition hover:text-white"
-            >
-              {item.label}
-              <span className="absolute inset-x-0 bottom-1 h-px origin-left scale-x-0 bg-[#ff5400] transition-transform duration-300 group-hover:scale-x-100" />
-            </Link>
-          ))}
-        </div>
-
-        <button
-          type="button"
-          className="grid size-11 place-items-center border border-white/15 bg-black/30 lg:hidden"
-          onClick={() => setOpen((value) => !value)}
-          aria-label={open ? "Close navigation" : "Open navigation"}
-          aria-expanded={open}
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </nav>
 
         {open && (
           <div className="border-t border-white/10 bg-[#0a0a0a]/96 px-4 py-5 backdrop-blur-xl lg:hidden">
             <div className="container grid gap-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="font-telemetry border-b border-white/8 px-2 py-3 text-xs font-bold uppercase tracking-[0.1em] text-white/76 transition last:border-0 hover:text-[#ff5400]"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const active =
+                  item.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(item.href);
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      "font-telemetry border-b border-white/8 px-2 py-3 text-xs font-semibold uppercase tracking-[0.1em] transition last:border-0",
+                      active
+                        ? "text-[#ff5400]"
+                        : "text-white/76 hover:text-white",
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}
@@ -168,66 +175,79 @@ export function SiteNav() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: reduceMotion ? 0.15 : 0.35 }}
+            transition={{ duration: reduceMotion ? 0.12 : 0.28 }}
             role="dialog"
             aria-modal="true"
-            aria-label="Team Srijan race animation"
+            aria-label="Team Srijan race introduction"
           >
-            <div className="telemetry-grid absolute inset-0 opacity-45" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(217,4,41,0.2),transparent_38rem)]" />
-
-            {!reduceMotion && speedLines.map((top, index) => (
-              <motion.span
-                key={top}
-                className="absolute left-[-35vw] h-px w-[34vw] bg-gradient-to-r from-transparent via-[#ff5400]/75 to-transparent"
-                style={{ top: `${top}%` }}
-                animate={{ x: ["0vw", "170vw"] }}
-                transition={{ duration: 0.8 + (index % 3) * 0.14, delay: index * 0.08, repeat: 3, ease: "linear" }}
-              />
-            ))}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_55%,rgba(217,4,41,0.2),transparent_34rem)]" />
+            <motion.span
+              aria-hidden
+              className="absolute left-[-45vw] top-[58%] h-px w-[42vw] bg-gradient-to-r from-transparent via-[#ff5400] to-transparent"
+              animate={
+                reduceMotion
+                  ? { opacity: 0 }
+                  : { x: ["0vw", "190vw"], opacity: [0, 1, 0] }
+              }
+              transition={{ duration: 1.25, ease: "linear" }}
+            />
 
             <button
               type="button"
               onClick={() => setShowRaceIntro(false)}
-              className="font-telemetry absolute right-5 top-5 z-20 rounded-[6px] border border-white/15 bg-black/35 px-4 py-2 text-[9px] uppercase tracking-[0.16em] text-white/55 transition hover:border-[#ff5400] hover:text-white"
+              className="font-telemetry absolute right-5 top-5 z-20 rounded-[6px] border border-white/15 bg-black/45 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/64 transition hover:border-[#ff5400] hover:text-white"
             >
               Skip
             </button>
 
-            <motion.div
-              className="absolute left-0 top-[54%] z-10 -translate-y-1/2 drop-shadow-[0_18px_45px_rgba(217,4,41,0.45)]"
-              initial={reduceMotion ? { opacity: 0 } : { x: "-30vw", opacity: 1 }}
-              animate={reduceMotion ? { opacity: 0 } : { x: "115vw", opacity: 1 }}
-              transition={{ duration: reduceMotion ? 0.1 : 1.75, ease: [0.5, 0, 0.65, 1] }}
-            >
-              <RaceCar />
-            </motion.div>
+            {!reduceMotion && (
+              <motion.div
+                aria-hidden
+                className="absolute left-0 top-[56%] z-10 -translate-y-1/2 drop-shadow-[0_20px_60px_rgba(217,4,41,0.5)]"
+                initial={{ x: "-78vw", opacity: 0.25 }}
+                animate={{ x: "122vw", opacity: [0.25, 1, 0.25] }}
+                transition={{ duration: 1.65, ease: [0.5, 0, 0.62, 1] }}
+              >
+                <div className="relative h-40 w-[min(76vw,760px)] overflow-hidden sm:h-56">
+                  <Image
+                    src="/images/TSI-25.png"
+                    alt=""
+                    fill
+                    sizes="76vw"
+                    className="object-cover object-center brightness-110 contrast-125 saturate-75 [mask-image:linear-gradient(90deg,transparent_0%,black_18%,black_82%,transparent_100%)]"
+                  />
+                </div>
+              </motion.div>
+            )}
 
             <motion.div
               className="relative z-10 grid min-h-screen place-items-center px-5 text-center"
-              initial={{ opacity: 0, y: reduceMotion ? 0 : 26, filter: reduceMotion ? "blur(0px)" : "blur(10px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: reduceMotion ? 0.2 : 0.7, delay: reduceMotion ? 0 : 1.25 }}
+              initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: reduceMotion ? 0.15 : 0.55,
+                delay: reduceMotion ? 0 : 1.05,
+              }}
             >
               <div aria-live="polite">
-                <p className="font-telemetry text-[10px] font-bold uppercase tracking-[0.34em] text-[#ff5400] sm:text-xs">Team Srijan</p>
-                <h2 className="mt-5 max-w-5xl font-display text-[clamp(1.8rem,4.5vw,4.5rem)] uppercase leading-[1.2] tracking-[0.02em]">
-                  Our Heart&apos;s Don&apos;t Beat,<br />They Revv!
+                <p className="font-telemetry text-[11px] font-semibold uppercase tracking-[0.16em] text-[#ff5400]">
+                  Team Srijan
+                </p>
+                <h2 className="mt-5 max-w-5xl font-display text-[clamp(2.2rem,6vw,5.8rem)] font-bold uppercase leading-[0.96] tracking-[-0.01em]">
+                  Our Hearts Don&apos;t Beat.
+                  <span className="mt-2 block text-white/58">They Revv!</span>
                 </h2>
                 <motion.div
                   className="mx-auto mt-8 h-0.5 max-w-xl origin-left bg-gradient-to-r from-transparent via-[#d90429] to-transparent"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
-                  transition={{ duration: reduceMotion ? 0.2 : 0.8, delay: reduceMotion ? 0 : 1.55 }}
+                  transition={{
+                    duration: reduceMotion ? 0.15 : 0.6,
+                    delay: reduceMotion ? 0 : 1.35,
+                  }}
                 />
               </div>
             </motion.div>
-
-            <div className="absolute inset-x-0 bottom-0 grid h-3 grid-cols-12 opacity-65" aria-hidden>
-              {Array.from({ length: 12 }, (_, index) => (
-                <span key={index} className={index % 2 ? "bg-white" : "bg-[#d90429]"} />
-              ))}
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
