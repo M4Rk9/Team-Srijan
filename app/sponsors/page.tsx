@@ -15,26 +15,26 @@ const sponsors = [
     category: "Platinum Sponsor",
     name: "PVUNL",
     href: "https://www.pvunl.co.in/",
-    logo: "/images/PVUNL.png",
+    logo: "/images/sponsor-pvunl.png",
     featured: true,
   },
   {
     category: "Gold Sponsor",
     name: "TVS Motor Company",
     href: "https://www.tvsmotor.com/",
-    logo: "/images/TVS.png",
+    logo: "/images/sponsor-tvs.png",
   },
   {
     category: "Silver Sponsor",
     name: "Kundan Lal & Sons",
     href: "https://kundanlalandsons.com/",
-    logo: "/images/KundanLal.png",
+    logo: "/images/sponsor-kundan-lal.png",
   },
   {
     category: "Silver Sponsor",
     name: "Magod Laser",
     href: "https://www.magodlaser.in/",
-    logo: "/images/Magod Lazer.png",
+    logo: "/images/sponsor-magod-laser.png",
   },
   {
     category: "Silver Sponsor",
@@ -52,7 +52,7 @@ const sponsors = [
     category: "Software Sponsor",
     name: "Dassault Systèmes",
     href: "https://www.3ds.com/",
-    logo: "/images/Dassault Systemes.png",
+    logo: "/images/sponsor-dassault-systemes.png",
   },
   {
     category: "Software Sponsor",
@@ -64,7 +64,7 @@ const sponsors = [
     category: "Software Sponsor",
     name: "Realis Simulation",
     href: "https://www.realis-simulation.com/",
-    logo: "/images/Realis.png",
+    logo: "/images/sponsor-realis.png",
   },
 ] as const;
 
@@ -75,7 +75,7 @@ const sponsorGroups = [
     description:
       "Principal support for Team Srijan's 2026 Formula Student programme.",
     grid: "lg:grid-cols-1",
-    logoClass: "max-h-56 md:max-h-64",
+    logoAreaClass: "h-56 md:h-72",
     tileClass: "min-h-80 md:min-h-96",
     icon: Trophy,
   },
@@ -85,7 +85,7 @@ const sponsorGroups = [
     description:
       "Major support for our vehicle development and competition season.",
     grid: "lg:grid-cols-1",
-    logoClass: "max-h-44 md:max-h-52",
+    logoAreaClass: "h-44 md:h-56",
     tileClass: "min-h-64 md:min-h-72",
     icon: Trophy,
   },
@@ -95,7 +95,7 @@ const sponsorGroups = [
     description:
       "Manufacturing and programme partners who help turn designs into a running car.",
     grid: "lg:grid-cols-2",
-    logoClass: "max-h-40 md:max-h-48",
+    logoAreaClass: "h-40 md:h-48",
     tileClass: "min-h-60 md:min-h-68",
     icon: Trophy,
   },
@@ -105,7 +105,7 @@ const sponsorGroups = [
     description:
       "Design, simulation, and validation tools used throughout the development of our Formula Student cars.",
     grid: "lg:grid-cols-3",
-    logoClass: "max-h-36 md:max-h-44",
+    logoAreaClass: "h-36 md:h-44",
     tileClass: "min-h-60 md:min-h-68",
     icon: Cpu,
   },
@@ -166,19 +166,17 @@ export default function SponsorsPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Visit ${sponsor.name} website`}
-                        className={`group relative grid ${group.tileClass} place-items-center overflow-hidden rounded-[8px] border border-white/12 bg-black p-8 transition hover:-translate-y-1 hover:border-[#ff5400]/70 hover:shadow-[0_22px_80px_rgba(217,4,41,0.18)]`}
+                        className={`group relative grid ${group.tileClass} place-items-center overflow-hidden rounded-[8px] border border-white/12 bg-black p-5 transition hover:-translate-y-1 hover:border-[#ff5400]/70 hover:shadow-[0_22px_80px_rgba(217,4,41,0.18)] sm:p-6`}
                       >
-                        <Image
-                          src={sponsor.logo}
-                          alt={`${sponsor.name} logo`}
-                          width={
-                            "featured" in sponsor && sponsor.featured
-                              ? 520
-                              : 430
-                          }
-                          height={260}
-                          className={`${group.logoClass} w-auto object-contain transition duration-300 group-hover:scale-[1.04]`}
-                        />
+                        <span className={`relative block w-full ${group.logoAreaClass}`}>
+                          <Image
+                            src={sponsor.logo}
+                            alt={`${sponsor.name} logo`}
+                            fill
+                            sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 70vw"
+                            className="object-contain transition duration-300 group-hover:scale-[1.04]"
+                          />
+                        </span>
                         <span className="absolute right-4 top-4 grid size-10 place-items-center rounded-[6px] border border-white/10 bg-white/[0.035] text-white/50 transition group-hover:border-[#ff5400]/70 group-hover:text-[#ff5400]">
                           <ExternalLink size={17} />
                         </span>
