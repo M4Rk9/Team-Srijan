@@ -159,7 +159,11 @@ export default function SponsorsPage() {
                         <Image
                           src={sponsor.logo}
                           alt={`${sponsor.name} logo`}
-                          width={sponsor.featured ? 520 : 430}
+                          width={
+                            "featured" in sponsor && sponsor.featured
+                              ? 520
+                              : 430
+                          }
                           height={260}
                           className={`${group.logoClass} w-auto object-contain transition duration-300 group-hover:scale-[1.04]`}
                         />
