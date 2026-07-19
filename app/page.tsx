@@ -23,7 +23,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { navItems, SiteNav } from "@/components/site-nav";
 
-const teamLogo = "/images/team-srijan-logo.png";
 const instituteLogo = "/images/bit-mesra-logo.png";
 
 const sponsorReasons = [
@@ -560,26 +559,7 @@ function Footer() {
       <div className="container">
         <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="grid size-12 place-items-center overflow-hidden rounded-[6px] bg-white">
-                <Image
-                  src={teamLogo}
-                  alt="Team Srijan logo"
-                  width={44}
-                  height={44}
-                  className="h-10 w-10 object-contain"
-                />
-              </span>
-              <div>
-                <p className="font-display font-bold tracking-[0.22em]">
-                  TEAM SRIJAN
-                </p>
-                <p className="text-xs uppercase tracking-[0.22em] text-white/45">
-                  Formula Student Team
-                </p>
-              </div>
-            </div>
-            <div className="mt-5 flex w-fit items-center gap-3 rounded-[6px] border border-white/10 bg-white/[0.045] p-3">
+            <div className="flex w-fit items-center gap-3 rounded-[6px] border border-white/10 bg-white/[0.045] p-3">
               <span className="grid size-10 place-items-center overflow-hidden rounded-[6px] bg-white">
                 <Image
                   src={instituteLogo}
@@ -595,9 +575,6 @@ function Footer() {
                 of Birla Institute of Technology, Mesra
               </span>
             </div>
-            <p className="mt-5 max-w-md text-sm leading-7 text-white/55">
-              Our Hearts Don&apos;t Beat. They Revv!
-            </p>
           </div>
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-white/45">
