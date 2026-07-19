@@ -378,15 +378,18 @@ function WhoWeAre() {
             />
           </div>
         </Reveal>
-        <Reveal delay={0.1} className="self-start text-base leading-8 text-white/66 md:text-lg">
+        <Reveal delay={0.1} className="self-start text-base leading-8 text-white/66 md:text-lg lg:mt-10">
           <p>
-            Team Srijan is one of the oldest technical clubs of BIT Mesra, which
-            has been growing steadily since 2007. It is a group of undergraduate
-            students from various branches of engineering who work together to
-            design, conceive and manufacture the prototype of a formula race car
-            to participate in Formula Student competitions held across the
-            globe. We are bonded together by our passion to innovate and apply
-            our knowledge to practical scenarios.
+            Team Srijan is Birla Institute of Technology, Mesra&apos;s student-run
+            Formula SAE program. Established in 2007, we are one of the
+            institute&apos;s oldest and most established technical clubs. Students
+            from diverse engineering disciplines work together to design,
+            analyse, manufacture, test, and race a formula-style car. Every
+            subsystem is developed under real constraints of performance,
+            reliability, cost, and time. We exist to do more than build a race
+            car. Team Srijan gives students room to become engineers and leaders
+            while carrying Birla Institute of Technology, Mesra&apos;s name onto
+            national and international grids.
           </p>
         </Reveal>
       </div>
