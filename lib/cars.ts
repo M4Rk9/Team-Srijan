@@ -7,10 +7,10 @@ export type TeamCar = {
 
 export const teamCars: TeamCar[] = [
   {
-    name: "TSI-07",
+    name: "FS-07",
     year: "2007",
     image: "/images/TSI-07.png",
-    story: "TSI-07 was the car that turned a bold campus idea into Team Srijan. A young team learned almost everything as they went, then took their work from BIT Mesra to Silverstone and earned fifth place in Formula Student UK’s Class II. That first season gave every generation after it a place to begin."
+    story: "FS-07 was the car that turned a bold campus idea into Team Srijan. A young team learned almost everything as they went, then took their work from BIT Mesra to Silverstone and earned fifth place in Formula Student UK’s Class II. That first season gave every generation after it a place to begin."
   },
   {
     name: "TSI-11",
@@ -25,10 +25,10 @@ export const teamCars: TeamCar[] = [
     story: "TSI-12 showed what could happen when a returning team began to trust its own process. The car became the second-lightest entry at SUPRA SAE. For the students who built it, that result was a sign that the team had moved beyond rebuilding and was making every decision with more purpose."
   },
   {
-    name: "TSI-13",
+    name: "BMRO51",
     year: "2013",
     image: "/images/TSI-13.png",
-    story: "TSI-13 carried the team beyond India to the Riccardo Paletti Circuit for Formula Student Italy. Being named the second-best Indian team in the Engineering Design Event made the season unforgettable and proved that work done in a student workshop in Ranchi could stand confidently on an international stage."
+    story: "BMRO51 carried the team beyond India to the Riccardo Paletti Circuit for Formula Student Italy. Being named the second-best Indian team in the Engineering Design Event made the season unforgettable and proved that work done in a student workshop in Ranchi could stand confidently on an international stage."
   },
   {
     name: "TSI-15",
