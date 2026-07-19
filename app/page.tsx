@@ -370,6 +370,16 @@ function WhoWeAre() {
           <h2 className="mt-4 font-display text-[clamp(2rem,4vw,3.8rem)] font-bold leading-[1.02] tracking-[-0.01em]">
             One team. Every discipline.
           </h2>
+          <div className="mt-8 overflow-hidden rounded-[8px] border border-white/10 bg-black">
+            <Image
+              src="/images/team-srijan-heritage-car.webp"
+              alt="Team Srijan driver standing beside an early formula-style car"
+              width={742}
+              height={678}
+              sizes="(max-width: 1024px) 100vw, 36vw"
+              className="aspect-[742/678] w-full object-cover"
+            />
+          </div>
         </Reveal>
         <Reveal delay={0.1} className="grid gap-5 text-base leading-8 text-white/66 md:text-lg">
           <p>
