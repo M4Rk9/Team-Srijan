@@ -16,6 +16,20 @@ const roles = [
   "Electrical"
 ] as const;
 
+const studyBranches = [
+  "Artificial Intelligence and Machine Learning",
+  "Biotechnology",
+  "Chemical Engineering",
+  "Civil Engineering",
+  "Computer Science and Engineering",
+  "Electrical and Electronics Engineering",
+  "Electronics and Communication Engineering",
+  "Food Engineering and Technology",
+  "Mechanical Engineering",
+  "Production and Industrial Engineering",
+  "Others"
+] as const;
+
 const inputClass =
   "h-12 w-full rounded-[6px] border border-white/10 bg-black/45 px-4 text-base font-normal text-white outline-none transition placeholder:text-white/28 focus:border-[#ff5400] focus:ring-1 focus:ring-[#ff5400]/35";
 
@@ -79,31 +93,27 @@ export function JoinApplicationForm() {
             </label>
           </div>
 
-          <label className={labelClass}>
-            Branch of study
-            <input className={inputClass} name="branch" type="text" placeholder="Electronics & Communication Engineering" required />
-          </label>
-
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-[1fr_0.45fr]">
             <label className={labelClass}>
-              Degree
-              <select className={inputClass} name="degree" defaultValue="" required>
-                <option value="" disabled>Select degree</option>
-                <option>B.Tech</option>
-                <option>B.Arch</option>
-                <option>B.Pharm</option>
-                <option>Integrated M.Sc.</option>
-                <option>Other</option>
+              Branch of study
+              <select className={inputClass} name="branch" defaultValue="" required>
+                <option value="" disabled>Select branch</option>
+                {studyBranches.map((branch) => (
+                  <option key={branch} value={branch}>{branch}</option>
+                ))}
               </select>
             </label>
             <label className={labelClass}>
               Semester
               <select className={inputClass} name="semester" defaultValue="" required>
-                <option value="" disabled>Select semester</option>
-                {Array.from({ length: 8 }, (_, index) => (
+                <option value="" disabled>Select semester (1–4)</option>
+                {Array.from({ length: 4 }, (_, index) => (
                   <option key={index + 1} value={`Semester ${index + 1}`}>Semester {index + 1}</option>
                 ))}
               </select>
+              <span className="text-[11px] font-normal leading-5 tracking-normal text-white/42">
+                Applications are open through the 4th semester.
+              </span>
             </label>
           </div>
 
