@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     title: "The Team | Team Srijan",
     description:
       "A premium look at the multidisciplinary Team Srijan race program, leadership, subsystems, culture, and members.",
-    images: ["/images/TSI-25.png"],
-  },
+    images: ["/images/TSI-25.png"]
+  }
 };
 
 export default function TeamPage() {
