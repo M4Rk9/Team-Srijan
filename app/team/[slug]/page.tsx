@@ -11,6 +11,12 @@ type PageProps = {
   }>;
 };
 
+const cohorts = [
+  { batch: "K23", graduationYear: 2027 },
+  { batch: "K24", graduationYear: 2028 },
+  { batch: "K25", graduationYear: 2029 }
+] as const;
+
 export function generateStaticParams() {
   return subteams.map((subteam) => ({
     slug: subteam.slug
@@ -82,46 +88,68 @@ export default async function SubteamPage({ params }: PageProps) {
               <h2 id="member-heading" className="mt-2 font-display text-3xl font-bold">Meet the team</h2>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {subteam.members.map((member) => (
-                <article key={`${member.name}-${member.graduationYear}`} className="group overflow-hidden rounded-[10px] border border-white/10 bg-[#111216] transition hover:-translate-y-1 hover:border-[#ff5400]/55 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
-                  <div className="relative aspect-[4/5] overflow-hidden bg-[#0b0b0b]">
-                    <Image
-                      src={member.photo}
-                      alt={`${member.name}, Team Srijan ${subteam.title} member`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition duration-500 group-hover:scale-[1.035]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-transparent to-transparent" />
-                    <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-white/75 backdrop-blur">
-                      <GraduationCap size={14} /> Class of {member.graduationYear}
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-display text-2xl font-bold">{member.name}</h3>
-                    <p className="mt-2 min-h-12 text-sm font-semibold leading-6 text-[#ff5400]">{subteam.title} Subteam</p>
-                    <p className="mt-3 min-h-12 text-sm leading-6 text-white/52">{member.branch}</p>
-                    {member.linkedin ? (
-                      <Link
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Open ${member.name}'s LinkedIn profile`}
-                        className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-[6px] border border-[#0a66c2]/60 bg-[#0a66c2]/12 text-xs font-bold uppercase tracking-[0.13em] text-[#75b6f3] transition hover:bg-[#0a66c2] hover:text-white"
-                      >
-                        <Linkedin size={17} />
-                        LinkedIn Profile
-                      </Link>
-                    ) : (
-                      <p className="mt-5 flex h-11 items-center justify-center gap-2 rounded-[6px] border border-[#0a66c2]/20 bg-[#0a66c2]/5 text-xs uppercase tracking-[0.12em] text-[#75b6f3]/35">
-                        <Linkedin size={16} />
-                        Profile unavailable
-                      </p>
-                    )}
-                  </div>
-                </article>
-              ))}
+            <div className="grid gap-14">
+              {cohorts.map(({ batch, graduationYear }) => {
+                const members = subteam.members.filter((member) => member.graduationYear === graduationYear);
+
+                if (members.length === 0) {
+                  return null;
+                }
+
+                return (
+                  <section key={batch} aria-labelledby={`${batch}-heading`}>
+                    <div className="mb-6 flex items-end gap-4 border-b border-white/10 pb-4">
+                      <div>
+                        <p className="font-telemetry text-[10px] font-bold uppercase tracking-[0.28em] text-[#ff5400]">Batch</p>
+                        <h3 id={`${batch}-heading`} className="mt-2 font-display text-3xl font-bold">{batch}</h3>
+                      </div>
+                      <p className="pb-1 text-sm text-white/42">Graduating class of {graduationYear}</p>
+                    </div>
+
+                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {members.map((member) => (
+                        <article key={`${member.name}-${member.graduationYear}`} className="group overflow-hidden rounded-[10px] border border-white/10 bg-[#111216] transition hover:-translate-y-1 hover:border-[#ff5400]/55 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
+                          <div className="relative aspect-[4/5] overflow-hidden bg-[#0b0b0b]">
+                            <Image
+                              src={member.photo}
+                              alt={`${member.name}, Team Srijan ${subteam.title} member`}
+                              fill
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                              className="object-cover transition duration-500 group-hover:scale-[1.035]"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-transparent to-transparent" />
+                            <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-white/75 backdrop-blur">
+                              <GraduationCap size={14} /> Class of {member.graduationYear}
+                            </span>
+                          </div>
+                          <div className="p-5">
+                            <h4 className="font-display text-2xl font-bold">{member.name}</h4>
+                            <p className="mt-2 min-h-12 text-sm font-semibold leading-6 text-[#ff5400]">{subteam.title} Subteam</p>
+                            <p className="mt-3 min-h-12 text-sm leading-6 text-white/52">{member.branch}</p>
+                            {member.linkedin ? (
+                              <Link
+                                href={member.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Open ${member.name}'s LinkedIn profile`}
+                                className="mt-5 inline-flex h-11 w-full items-center justify-center gap-2 rounded-[6px] border border-[#0a66c2]/60 bg-[#0a66c2]/12 text-xs font-bold uppercase tracking-[0.13em] text-[#75b6f3] transition hover:bg-[#0a66c2] hover:text-white"
+                              >
+                                <Linkedin size={17} />
+                                LinkedIn Profile
+                              </Link>
+                            ) : (
+                              <p className="mt-5 flex h-11 items-center justify-center gap-2 rounded-[6px] border border-[#0a66c2]/20 bg-[#0a66c2]/5 text-xs uppercase tracking-[0.12em] text-[#75b6f3]/35">
+                                <Linkedin size={16} />
+                                Profile unavailable
+                              </p>
+                            )}
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </section>
+                );
+              })}
             </div>
           </section>
         </div>

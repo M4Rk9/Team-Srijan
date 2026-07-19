@@ -108,6 +108,19 @@ function Hero() {
     <section id="home" className="relative min-h-screen overflow-hidden">
       <motion.div style={{ y, opacity }} className="absolute inset-0">
         <Image src="/images/TSI-25.png" alt="Team Srijan TSI-25 Formula Student race car" fill priority sizes="100vw" className="object-cover" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/TSI-25.png"
+          aria-hidden="true"
+          tabIndex={-1}
+          className="hero-background-video absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/team-srijan-hero.mp4" type="video/mp4" />
+        </video>
       </motion.div>
       <div className="absolute inset-0 bg-[linear-gradient(90deg,#0a0a0a_0%,rgba(10,10,10,0.88)_28%,rgba(10,10,10,0.38)_68%,rgba(10,10,10,0.9)_100%)]" />
       <div className="telemetry-grid absolute inset-0 opacity-60" />

@@ -83,6 +83,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-background-video {
+    display: none;
+  }
+
   *,
   *::before,
   *::after {
