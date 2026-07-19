@@ -104,16 +104,15 @@ export function JoinApplicationForm() {
               </select>
             </label>
             <label className={labelClass}>
-              Semester
-              <select className={inputClass} name="semester" defaultValue="" required>
-                <option value="" disabled>Select semester (1–4)</option>
-                {Array.from({ length: 4 }, (_, index) => (
-                  <option key={index + 1} value={`Semester ${index + 1}`}>Semester {index + 1}</option>
-                ))}
-              </select>
-              <span className="text-[11px] font-normal leading-5 tracking-normal text-white/42">
-                Applications are open through the 4th semester.
-              </span>
+              Roll number
+              <input
+                className={inputClass}
+                name="rollNumber"
+                type="text"
+                placeholder="BTECH/10xxx/2x"
+                autoCapitalize="characters"
+                required
+              />
             </label>
           </div>
 
@@ -166,8 +165,8 @@ export function JoinApplicationForm() {
 
       <div className="relative min-h-[420px] border-t border-white/10 lg:min-h-full lg:border-l lg:border-t-0">
         <Image
-          src="/images/team_pic.png"
-          alt="Team Srijan members with their Formula Student car"
+          src="/images/team-srijan-join.webp"
+          alt="Team Srijan members working on the TSI-25 Formula Student car"
           fill
           sizes="(max-width: 1024px) 100vw, 44vw"
           className="object-cover"
