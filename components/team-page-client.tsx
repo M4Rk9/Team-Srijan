@@ -307,33 +307,39 @@ export function TeamPageClient() {
                         key={`${member.name}-${member.subteam}`}
                         delay={(index % 4) * 0.04}
                       >
-                        <article className="group h-full overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.045] transition hover:-translate-y-1 hover:border-[#ff5400]/55 hover:bg-white/[0.065]">
-                          <div className="relative aspect-[4/5] overflow-hidden bg-white/[0.03]">
+                        <article className="group flex h-full flex-col overflow-hidden rounded-[10px] border border-white/10 bg-[#111216] transition hover:-translate-y-1 hover:border-[#ff5400]/55 hover:shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
+                          <div className="relative aspect-[4/5] overflow-hidden bg-[#0b0b0b]">
                             <Image
                               src={member.photo}
                               alt={`${member.name}, Team Srijan ${member.subteam} member`}
                               fill
                               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                               loading="lazy"
-                              className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                              className="object-cover transition duration-500 group-hover:scale-[1.035]"
                             />
-                            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/90 to-transparent" />
-                            <span className="font-telemetry absolute bottom-3 left-3 rounded-[4px] border border-white/10 bg-black/65 px-2.5 py-1 text-[9px] uppercase tracking-[0.18em] text-white/72 backdrop-blur">
-                              {member.subteam}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-transparent to-transparent" />
+                            <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-white/75 backdrop-blur">
+                              <GraduationCap size={14} /> Class of{" "}
+                              {member.graduationYear}
                             </span>
                           </div>
-                          <div className="p-5">
-                            <p className="font-telemetry text-[10px] uppercase tracking-[0.2em] text-[#ff5400]">
-                              {member.position ?? "Team Member"}
-                            </p>
-                            <h4 className="mt-2 font-display text-xl font-bold leading-tight">
+                          <div className="flex flex-1 flex-col p-5">
+                            <h4 className="font-display text-2xl font-bold leading-tight">
                               {member.name}
                             </h4>
-                            <p className="mt-3 flex items-start gap-2 text-sm leading-6 text-white/55">
-                              <GraduationCap
-                                className="mt-1 shrink-0 text-white/35"
-                                size={15}
-                              />
+                            <div className="mt-3 min-h-[5.5rem]">
+                              {member.position ? (
+                                <p className="text-sm font-semibold leading-6 text-[#ff5400]">
+                                  {member.position}
+                                </p>
+                              ) : null}
+                              <p
+                                className={`${member.position ? "mt-2 text-white/48" : "text-[#ff5400]"} text-sm font-semibold leading-6`}
+                              >
+                                {member.subteam} Subteam
+                              </p>
+                            </div>
+                            <p className="mt-3 min-h-12 text-sm leading-6 text-white/52">
                               {member.branch}
                             </p>
                             {member.linkedin ? (
@@ -341,14 +347,14 @@ export function TeamPageClient() {
                                 href={member.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-white/65 transition hover:text-[#ff5400]"
-                                aria-label={`${member.name} on LinkedIn`}
+                                className="mt-auto inline-flex h-11 w-full items-center justify-center gap-2 rounded-[6px] border border-[#0a66c2]/60 bg-[#0a66c2]/12 text-xs font-bold uppercase tracking-[0.13em] text-[#75b6f3] transition hover:bg-[#0a66c2] hover:text-white"
+                                aria-label={`Open ${member.name}'s LinkedIn profile`}
                               >
-                                <Linkedin size={15} /> LinkedIn
+                                <Linkedin size={17} /> LinkedIn Profile
                               </Link>
                             ) : (
-                              <p className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-white/28">
-                                <Linkedin size={15} /> Profile unavailable
+                              <p className="mt-auto flex h-11 items-center justify-center gap-2 rounded-[6px] border border-[#0a66c2]/20 bg-[#0a66c2]/5 text-xs uppercase tracking-[0.12em] text-[#75b6f3]/35">
+                                <Linkedin size={16} /> Profile unavailable
                               </p>
                             )}
                           </div>
