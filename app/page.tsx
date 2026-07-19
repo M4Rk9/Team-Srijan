@@ -58,6 +58,33 @@ const competitionLinks = [
   ["Formula Student Germany", "https://www.formulastudent.de/teams/fse/details/tid/1132/"]
 ] as const;
 
+const newsletters = [
+  {
+    period: "May - June 2026",
+    issue: "Issue 03",
+    title: "First Test. Next Chapter.",
+    summary: "TSI-26 completes its maiden test as the team prepares for Formula Bharat 2027 and advances final manufacturing work.",
+    cover: "/images/newsletters/revving-passions-may-jun-2026.jpg",
+    pdf: "/newsletters/revving-passions-may-jun-2026.pdf"
+  },
+  {
+    period: "March - April 2026",
+    issue: "Issue 02",
+    title: "TSI-26 Takes Shape.",
+    summary: "The chassis is completed, machined parts arrive, composite moulds progress, and the workshop prepares for final assembly.",
+    cover: "/images/newsletters/revving-passions-mar-apr-2026.jpg",
+    pdf: "/newsletters/revving-passions-mar-apr-2026.pdf"
+  },
+  {
+    period: "January - February 2026",
+    issue: "Issue 01",
+    title: "From Design to Manufacturing.",
+    summary: "The TSI-26 design reaches completion, procurement begins, and the team welcomes PVUNL as its platinum sponsor.",
+    cover: "/images/newsletters/revving-passions-jan-feb-2026.jpg",
+    pdf: "/newsletters/revving-passions-jan-feb-2026.pdf"
+  }
+] as const;
+
 function Reveal({ children, delay = 0, className }: { children: React.ReactNode; delay?: number; className?: string }) {
   return (
     <motion.div
@@ -289,6 +316,68 @@ function Story() {
   );
 }
 
+function News() {
+  return (
+    <section id="news" className="section-pad relative overflow-hidden bg-[#f2efe9] text-[#0a0a0a]">
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#d90429] via-[#ff5400] to-[#d90429]" />
+      <div className="container relative">
+        <Reveal>
+          <div className="mb-12 max-w-4xl">
+            <p className="font-telemetry mb-3 text-xs font-bold uppercase tracking-[0.32em] text-[#d90429]">News / Revving Passions</p>
+            <h2 className="font-display text-[clamp(2rem,4.2vw,4.4rem)] font-bold leading-[1.04]">Follow the road to TSI-26.</h2>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-black/62 md:text-lg">
+              Revving Passions is the official Team Srijan newsletter, documenting the design, manufacturing, testing, and people behind our newest Formula Student car.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {newsletters.map((newsletter, index) => (
+            <Reveal key={newsletter.period} delay={index * 0.07}>
+              <article className="group flex h-full flex-col">
+                <Link
+                  href={newsletter.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Read the ${newsletter.period} edition of Revving Passions`}
+                  className="relative block overflow-hidden rounded-[10px] bg-black shadow-[0_20px_55px_rgba(0,0,0,0.18)]"
+                >
+                  <Image
+                    src={newsletter.cover}
+                    alt={`Revving Passions ${newsletter.period} newsletter cover`}
+                    width={1200}
+                    height={1697}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="aspect-[4/5] w-full object-cover object-top transition duration-500 group-hover:scale-[1.025]"
+                  />
+                  <span className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#b00018]/90 to-transparent" />
+                  <span className="font-telemetry absolute bottom-4 left-4 rounded-full border border-white/30 bg-black/35 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.17em] text-white backdrop-blur">
+                    {newsletter.issue}
+                  </span>
+                </Link>
+
+                <div className="flex flex-1 flex-col pt-6">
+                  <p className="font-telemetry text-[10px] font-bold uppercase tracking-[0.2em] text-[#d90429]">{newsletter.period}</p>
+                  <h3 className="mt-3 font-display text-2xl font-bold leading-tight">{newsletter.title}</h3>
+                  <p className="mt-4 flex-1 text-sm leading-7 text-black/62">{newsletter.summary}</p>
+                  <Link
+                    href={newsletter.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex w-fit items-center gap-2 rounded-[6px] border-2 border-[#d90429] px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-[#a6001c] transition hover:bg-[#d90429] hover:text-white"
+                  >
+                    Read Newsletter <ExternalLink size={16} />
+                  </Link>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Team() {
   return (
     <section id="team" className="section-pad carbon">
@@ -490,6 +579,7 @@ export default function Home() {
       <Hero />
       <FormulaStudent />
       <Story />
+      <News />
       <Team />
       <Sponsorship />
       <Footer />

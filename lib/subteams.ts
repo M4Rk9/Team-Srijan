@@ -4,6 +4,7 @@ export type SubteamMember = {
   graduationYear: number;
   photo: string;
   linkedin?: string;
+  position?: string;
 };
 
 export type Subteam = {
@@ -94,7 +95,8 @@ export const subteams: Subteam[] = [
         branch: "Mechanical Engineering",
         graduationYear: 2027,
         photo: "/images/team/shashwat-pankaj-singh.jpg",
-        linkedin: "https://www.linkedin.com/in/shashwat-pankaj-singh"
+        linkedin: "https://www.linkedin.com/in/shashwat-pankaj-singh",
+        position: "Team Manager"
       },
       {
         name: "Natisha Anand",
@@ -191,14 +193,16 @@ export const subteams: Subteam[] = [
         branch: "Mechanical Engineering",
         graduationYear: 2027,
         photo: "/images/team/pranshu.jpg",
-        linkedin: "https://www.linkedin.com/in/pranshu527"
+        linkedin: "https://www.linkedin.com/in/pranshu527",
+        position: "Team Captain"
       },
       {
         name: "Arnav Sarna",
         branch: "Mechanical Engineering",
         graduationYear: 2027,
         photo: "/images/team/arnav-sarna.jpg",
-        linkedin: "https://www.linkedin.com/in/arnav-sarna2905"
+        linkedin: "https://www.linkedin.com/in/arnav-sarna2905",
+        position: "Chief Technical Officer"
       },
       {
         name: "Aryan Kumar",
@@ -268,14 +272,16 @@ export const subteams: Subteam[] = [
         branch: "Mechanical Engineering",
         graduationYear: 2027,
         photo: "/images/team/keshri-ayush.jpg",
-        linkedin: "https://www.linkedin.com/in/keshriayush"
+        linkedin: "https://www.linkedin.com/in/keshriayush",
+        position: "Vice Captain (Mechanical)"
       },
       {
         name: "Souvik Sen",
         branch: "Production and Industrial Engineering",
         graduationYear: 2027,
         photo: "/images/team/souvik-sen.jpg",
-        linkedin: "https://www.linkedin.com/in/sensouviks"
+        linkedin: "https://www.linkedin.com/in/sensouviks",
+        position: "Vice Captain (Electrical)"
       },
       {
         name: "Rupam Kundu",

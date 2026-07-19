@@ -124,7 +124,15 @@ export default async function SubteamPage({ params }: PageProps) {
                           </div>
                           <div className="p-5">
                             <h4 className="font-display text-2xl font-bold">{member.name}</h4>
-                            <p className="mt-2 min-h-12 text-sm font-semibold leading-6 text-[#ff5400]">{subteam.title} Subteam</p>
+                            <div className="mt-3 min-h-[5.5rem]">
+                              {member.position ? (
+                                <>
+                                  <p className="font-telemetry text-[9px] font-bold uppercase tracking-[0.18em] text-white/38">Position of Responsibility</p>
+                                  <p className="mt-1 text-sm font-semibold leading-6 text-[#ff5400]">{member.position}</p>
+                                </>
+                              ) : null}
+                              <p className={`${member.position ? "mt-2 text-white/48" : "text-[#ff5400]"} text-sm font-semibold leading-6`}>{subteam.title} Subteam</p>
+                            </div>
                             <p className="mt-3 min-h-12 text-sm leading-6 text-white/52">{member.branch}</p>
                             {member.linkedin ? (
                               <Link
