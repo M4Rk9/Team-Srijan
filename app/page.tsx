@@ -367,10 +367,7 @@ function WhoWeAre() {
           <p className="font-telemetry text-xs font-semibold uppercase tracking-[0.16em] text-[#ff5400]">
             Who We Are
           </p>
-          <h2 className="mt-4 font-display text-[clamp(2rem,4vw,3.8rem)] font-bold leading-[1.02] tracking-[-0.01em]">
-            One team. Every discipline.
-          </h2>
-          <div className="mt-8 overflow-hidden rounded-[8px] border border-white/10 bg-black">
+          <div className="mt-6 overflow-hidden rounded-[8px] border border-white/10 bg-black">
             <Image
               src="/images/team-srijan-heritage-car.webp"
               alt="Team Srijan driver standing beside an early formula-style car"
@@ -381,7 +378,7 @@ function WhoWeAre() {
             />
           </div>
         </Reveal>
-        <Reveal delay={0.1} className="grid gap-5 text-base leading-8 text-white/66 md:text-lg">
+        <Reveal delay={0.1} className="grid self-start gap-5 text-base leading-8 text-white/66 md:text-lg">
           <p>
             Team Srijan is Birla Institute of Technology, Mesra&apos;s student-run
             Formula SAE program. Established in 2007, we are one of the
