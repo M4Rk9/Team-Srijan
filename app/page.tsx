@@ -256,12 +256,12 @@ function FormulaStudent() {
         <Reveal>
           <div className="relative overflow-hidden rounded-[8px] border border-white/10 bg-[#111]">
             <Image
-              src="/images/TSE-22.png"
-              alt="Team Srijan car taking part in a Formula Student track event"
-              width={1200}
-              height={900}
+              src="/images/formula-student-competition.jpg"
+              alt="Formula Student teams and cars gathered at the competition track"
+              width={2048}
+              height={1365}
               sizes="(max-width: 1024px) 100vw, 48vw"
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[3/2] w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-transparent to-transparent" />
             <p className="font-telemetry absolute bottom-5 left-5 right-5 text-[10px] font-bold uppercase tracking-[0.24em] text-white/76">
