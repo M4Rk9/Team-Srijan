@@ -281,17 +281,6 @@ function FormulaStudent() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-5">
-            <Button asChild variant="outline" size="lg">
-              <Link
-                href="https://www.imeche.org/events/formula-student"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Explore Formula Student <ExternalLink size={17} />
-              </Link>
-            </Button>
-          </Reveal>
         </div>
       </div>
     </section>
