@@ -151,7 +151,7 @@ export const subteams: Subteam[] = [
   },
   {
     slug: "electrical",
-    title: "Electrical",
+    title: "Electrical and Electronics",
     summary: "Wiring harness, ECU integration, DAQ, sensors, telemetry, and driver interface systems.",
     members: [
       {
@@ -322,7 +322,7 @@ export const subteams: Subteam[] = [
   },
   {
     slug: "management-media",
-    title: "Management & Media",
+    title: "Management",
     summary: "Program management, sponsorship, brand communication, media operations, and outreach.",
     members: [
       {
