@@ -12,8 +12,8 @@ const roles = [
   "Brakes",
   "Vehicle Dynamics",
   "Powertrain",
-  "Management & Media",
-  "Electrical"
+  "Management",
+  "Electrical and Electronics"
 ] as const;
 
 const studyBranches = [
