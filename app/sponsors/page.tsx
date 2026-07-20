@@ -168,7 +168,7 @@ export default function SponsorsPage() {
                         aria-label={`Visit ${sponsor.name} website`}
                         className={`group relative grid ${group.tileClass} place-items-center overflow-hidden rounded-[8px] border border-white/12 bg-black p-5 transition hover:-translate-y-1 hover:border-[#ff5400]/70 hover:shadow-[0_22px_80px_rgba(217,4,41,0.18)] sm:p-6`}
                       >
-                        <span className={`relative block w-full ${group.logoAreaClass}`}>
+                        <span className={`relative block ${group.logoAreaClass} ${sponsor.name === "TVS Motor Company" ? "mx-auto w-[72%] max-w-3xl" : "w-full"}`}>
                           <Image
                             src={sponsor.logo}
                             alt={`${sponsor.name} logo`}
