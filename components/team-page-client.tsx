@@ -39,9 +39,11 @@ const cohorts = [
 const currentMembers = subteams.flatMap((subteam) =>
   subteam.members.map((member) => ({
     ...member,
-    subteam: subteam.title === "Electrical" ? "Electronics" : subteam.title,
+    subteam: subteam.title,
   })),
 );
+
+const subteamOptions = subteams.map((subteam) => subteam.title);
 
 const gallery = [
   [
@@ -120,6 +122,7 @@ export function TeamPageClient() {
   const [selectedImage, setSelectedImage] = useState<
     (typeof gallery)[number] | null
   >(null);
+  const [selectedSubteam, setSelectedSubteam] = useState("all");
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 760], [0, 150]);
   const heroOpacity = useTransform(scrollY, [0, 760], [1, 0.35]);
@@ -276,11 +279,41 @@ export function TeamPageClient() {
               </p>
             </div>
           </Reveal>
+          <Reveal className="mb-10">
+            <label
+              htmlFor="subteam-filter"
+              className="grid max-w-md gap-2"
+            >
+              <span className="font-telemetry text-[10px] font-bold uppercase tracking-[0.22em] text-white/52">
+                Find members by subteam
+              </span>
+              <select
+                id="subteam-filter"
+                value={selectedSubteam}
+                onChange={(event) => setSelectedSubteam(event.target.value)}
+                className="h-12 w-full cursor-pointer rounded-[6px] border border-white/12 bg-[#111216] px-4 text-sm font-semibold text-white outline-none transition focus:border-[#ff5400] focus:ring-1 focus:ring-[#ff5400]/40"
+              >
+                <option value="all">All Subteams</option>
+                {subteamOptions.map((subteam) => (
+                  <option key={subteam} value={subteam}>
+                    {subteam}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </Reveal>
           <div className="grid gap-16">
             {cohorts.map(({ batch, graduationYear }) => {
               const members = currentMembers.filter(
-                (member) => member.graduationYear === graduationYear,
+                (member) =>
+                  member.graduationYear === graduationYear &&
+                  (selectedSubteam === "all" ||
+                    member.subteam === selectedSubteam),
               );
+
+              if (members.length === 0) {
+                return null;
+              }
 
               return (
                 <section
@@ -296,8 +329,7 @@ export function TeamPageClient() {
                         {batch}
                       </h3>
                       <p className="font-telemetry text-[10px] uppercase tracking-[0.22em] text-white/45">
-                        Graduating class of {graduationYear} · {members.length}{" "}
-                        members
+                        Graduating class of {graduationYear}
                       </p>
                     </div>
                   </Reveal>
