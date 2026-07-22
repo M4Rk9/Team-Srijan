@@ -46,7 +46,7 @@ const sponsors = [
     category: "Silver Sponsor",
     name: "Objectify Technologies",
     href: "https://objectify.co.in",
-    logo: "/images/objectify-technologies.png",
+    logo: "/images/Objectify.png",
   },
   {
     category: "Software Sponsor",
