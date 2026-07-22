@@ -45,12 +45,6 @@ const currentMembers = subteams.flatMap((subteam) =>
 
 const subteamOptions = subteams.map((subteam) => subteam.title);
 
-const fullPhotoMembers = new Set([
-  "Natisha Anand",
-  "Brianson John Lakra",
-  "Shaban Rizwi",
-]);
-
 const gallery = [
   [
     "Design Reviews",
@@ -353,7 +347,7 @@ export function TeamPageClient() {
                               fill
                               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                               loading="lazy"
-                              className={`${fullPhotoMembers.has(member.name) ? "object-contain" : "object-cover"} transition duration-500 group-hover:scale-[1.035]`}
+                              className="object-cover transition duration-500 group-hover:scale-[1.035]"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-transparent to-transparent" />
                             <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/55 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-white/75 backdrop-blur">
