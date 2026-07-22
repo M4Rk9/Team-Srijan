@@ -305,13 +305,6 @@ export const subteams: Subteam[] = [
         linkedin: "https://www.linkedin.com/in/aryan-adhikari-8a1177380"
       },
       {
-        name: "Abhishek Kumar",
-        branch: "Mechanical Engineering",
-        graduationYear: 2029,
-        photo: "/images/team/abhishek-kumar.jpg",
-        linkedin: "https://www.linkedin.com/in/abhishek-kumar-b32092293"
-      },
-      {
         name: "Dharitri Acharya",
         branch: "Computer Science and Engineering",
         graduationYear: 2029,
