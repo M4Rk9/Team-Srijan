@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="900" viewBox="0 0 720 900" role="img" aria-labelledby="title description">
+  <title id="title">Team Srijan member photo placeholder</title>
+  <desc id="description">A neutral Team Srijan branded placeholder used when a member profile photograph is unavailable.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17191f"/>
+      <stop offset="1" stop-color="#08090c"/>
+    </linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="44%" r="54%">
+      <stop offset="0" stop-color="#ff5400" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ff5400" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="720" height="900" fill="url(#background)"/>
+  <rect width="720" height="900" fill="url(#grid)"/>
+  <rect width="720" height="900" fill="url(#glow)"/>
+  <path d="M0 730L720 520V900H0Z" fill="#050608" fill-opacity="0.72"/>
+  <circle cx="360" cy="380" r="154" fill="#11141a" stroke="#ffffff" stroke-opacity="0.09" stroke-width="3"/>
+  <circle cx="360" cy="380" r="119" fill="none" stroke="#ff5400" stroke-opacity="0.44" stroke-width="3" stroke-dasharray="8 16"/>
+  <text x="360" y="410" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="800" letter-spacing="8">TS</text>
+  <rect x="219" y="554" width="282" height="2" fill="#ff5400" fill-opacity="0.75"/>
+  <text x="360" y="610" text-anchor="middle" fill="#ffffff" fill-opacity="0.72" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="5">TEAM SRIJAN</text>
+  <text x="360" y="654" text-anchor="middle" fill="#ffffff" fill-opacity="0.38" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" letter-spacing="3">PROFILE PHOTO UNAVAILABLE</text>
+</svg>
