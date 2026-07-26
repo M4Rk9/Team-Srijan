@@ -165,8 +165,8 @@ export function JoinApplicationForm() {
 
       <div className="relative min-h-[420px] border-t border-white/10 lg:min-h-full lg:border-l lg:border-t-0">
         <Image
-          src="/images/team-srijan-join.webp"
-          alt="Team Srijan members with their Formula Student car at the competition track"
+          src="/images/team_pic.png"
+          alt="Team Srijan members gathered with their Formula Student car"
           fill
           sizes="(max-width: 1024px) 100vw, 44vw"
           className="object-cover"
