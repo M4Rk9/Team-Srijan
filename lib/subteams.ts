@@ -38,7 +38,7 @@ export const subteams: Subteam[] = [
         name: "Koushik Raj",
         branch: "Mechanical Engineering",
         graduationYear: 2029,
-        photo: "/images/team/koushik-raj.jpg",
+        photo: "/images/team/member-placeholder.svg",
         linkedin: "https://www.linkedin.com/in/koushik-raj-2a766541a"
       },
       {
@@ -80,7 +80,7 @@ export const subteams: Subteam[] = [
         name: "Shauryaman Singh Gaharwar",
         branch: "Mechanical Engineering",
         graduationYear: 2029,
-        photo: "/images/team/shauryaman-singh-gaharwar.jpg",
+        photo: "/images/team/member-placeholder.svg",
         linkedin: "https://www.linkedin.com/in/shauryaman-singh-1987b4421"
       }
     ]
@@ -137,7 +137,7 @@ export const subteams: Subteam[] = [
         name: "Sahil Jaglan",
         branch: "Mechanical Engineering",
         graduationYear: 2029,
-        photo: "/images/team/sahil-jaglan.jpg",
+        photo: "/images/team/member-placeholder.svg",
         linkedin: "https://www.linkedin.com/in/sahil-jaglan-668b14421"
       },
       {
@@ -243,7 +243,7 @@ export const subteams: Subteam[] = [
         name: "Meet Porwal",
         branch: "Production and Industrial Engineering",
         graduationYear: 2029,
-        photo: "/images/team/meet-porwal.jpg",
+        photo: "/images/team/member-placeholder.svg",
         linkedin: "https://www.linkedin.com/in/meet-porwal-715457360"
       },
       {
@@ -257,7 +257,7 @@ export const subteams: Subteam[] = [
         name: "Kumar Vaibhav",
         branch: "Civil Engineering",
         graduationYear: 2029,
-        photo: "/images/team/kumar-vaibhav.jpg",
+        photo: "/images/team/member-placeholder.svg",
         linkedin: "https://www.linkedin.com/in/kumar-vaibhav-805923421"
       }
     ]
@@ -294,7 +294,7 @@ export const subteams: Subteam[] = [
         name: "Adarsh Kumar",
         branch: "Mechanical Engineering",
         graduationYear: 2028,
-        photo: "/images/team/adarsh-kumar.jpg",
+        photo: "/images/team/member-placeholder.svg",
         linkedin: "https://www.linkedin.com/in/adarsh-kumar-61ba13324"
       },
       {
@@ -322,14 +322,14 @@ export const subteams: Subteam[] = [
         name: "Mourice Lakra",
         branch: "Computer Science and Engineering",
         graduationYear: 2028,
-        photo: "/images/team/mourice-lakra.jpg",
+        photo: "/images/team/member-placeholder.svg",
         linkedin: "https://www.linkedin.com/in/mourice-lakra-65940b332"
       },
       {
         name: "Yash Anand",
         branch: "Mechanical Engineering",
         graduationYear: 2028,
-        photo: "/images/team/yash-anand.jpg"
+        photo: "/images/team/member-placeholder.svg"
       },
       {
         name: "Ayush Mark Hembrom",
